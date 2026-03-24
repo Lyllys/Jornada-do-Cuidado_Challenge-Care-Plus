@@ -1,0 +1,32 @@
+:root {
+  --btn-primary-color: linear-gradient(90deg, #4a86c0 0%, #3a75ad 100%);
+
+  --bg-primary-color: #f0f4f8;
+  --bg-secondary-color: #d6e8ff;
+  --primary-blue: #4a86c0;
+  --secondary-blue: #00bfff;
+  --primary-gray: #343d42;
+  --secondary-gray: #606a70;
+  --shadow-primary-color: rgba(255, 199, 0, 0.4);
+
+  --text-primary-color: var(--primary-blue);
+  --text-secondary-color: var(--primary-gray);
+  --text-placeholder-color: var(--secondary-gray);
+  --text-link-color: var(--secondary-blue);
+
+  /* Override do tema do Bootstrap*/
+  --bs-primary: var(--primary-blue);
+  --bs-primary-rgb: 74, 134, 192;
+
+  --bs-secondary: var(--secondary-blue);
+  --bs-secondary-rgb: 0, 191, 255;
+
+  --bs-body-bg: var(--bg-primary-color);
+  --bs-body-bg-rgb: 240, 244, 248;
+
+  --bs-body-color: var(--text-secondary-color);
+  --bs-body-color-rgb: 52, 61, 66;
+
+  --bs-link-color: var(--text-link-color);
+  --bs-link-hover-color: var(--text-primary-color);
+}
