@@ -1,3 +1,6 @@
+/* Estilos para os componentes do layout, como botões, sidebar, etc. */
+
+/*Botões*/
 .btn-brand {
   color: #fff;
   background: var(--btn-primary-color);
@@ -22,4 +25,54 @@
   color: #fff;
   opacity: 0.65;
   transform: none;
+}
+
+/* App layout (sidebar + navbar) */
+.app-shell {
+  min-height: 100vh;
+}
+
+.app-main {
+  min-height: 100vh;
+}
+
+.saldo-care-coins-container {
+  background-color: var(--bg-hover-color);
+  border-radius: var(--bs-border-radius);
+}
+
+#offcanvasScrolling.offcanvas-container {
+  background-color: var(--bg-secondary-color);
+  border-right: none;
+  color: var(--secondary-gray);
+}
+
+@media (min-width: 992px) {
+  #offcanvasScrolling.offcanvas-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    transform: none;
+    visibility: visible;
+  }
+
+  .app-main,
+  nav.navbar-container {
+    margin-left: var(--app-sidebar-width);
+    padding-left: 1rem;
+  }
+}
+
+.menu-lateral-item a.nav-link.active {
+  color: var(--tertiary-blue);
+  background-color: var(--bg-secondary-color);
+  border-radius: var(--bs-border-radius);
+}
+
+.menu-lateral-item:hover,
+.menu-lateral-item:hover a {
+  color: var(--primary-blue);
+  background-color: var(--bg-hover-color);
+  border-radius: var(--bs-border-radius);
 }
