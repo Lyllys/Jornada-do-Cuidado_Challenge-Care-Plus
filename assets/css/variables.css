@@ -6,7 +6,6 @@
   --bg-primary-color: #f9fafb;
   --bg-secondary-color: #f5f8fa;
   --bg-tertiary-color: #d6e8ff;
-  --bg-hover-color: #dbe4f4aa;
 
   --primary-blue: #4a86c0;
   --secondary-blue: #00bfff;
@@ -14,7 +13,6 @@
 
   --primary-gray: #343d42;
   --secondary-gray: #606a70;
-  --shadow-primary-color: rgba(255, 199, 0, 0.4);
 
   --text-primary-color: var(--primary-blue);
   --text-secondary-color: var(--primary-gray);
