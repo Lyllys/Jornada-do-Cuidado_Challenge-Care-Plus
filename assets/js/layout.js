@@ -34,7 +34,7 @@ function loadLayout() {
                   <p class="ps-2 my-1 text-primary">Olá, Mariana!</p>
                   <p class="ps-2 my-1 fw-semibold">Nível 5: Bronze</p>
                 </div>
-                <ul class="navbar-nav pe-3">
+                <ul class="navbar-nav pe-3 gap-1">
                   <li class="nav-item menu-lateral-item">
                     <a class="nav-link px-3 ${currentPage === 'index.html' ? 'active' : ''}" href="index.html">
                         <i class="fa-solid fa-table-cells-large"></i> Home
@@ -53,7 +53,7 @@ function loadLayout() {
                 </ul>
               </div>
               <div class="border-top">
-                <ul class="navbar-nav pe-3 mt-2">
+                <ul class="navbar-nav pe-3 mt-2 gap-1">
                   <li class="nav-item menu-lateral-item">
                     <a class="nav-link px-3" href="#"><i class="fa-solid fa-gear"></i> Configurações</a>
                   </li>
