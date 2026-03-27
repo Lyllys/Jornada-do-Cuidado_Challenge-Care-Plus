@@ -1,10 +1,17 @@
 :root {
   --btn-primary-color: linear-gradient(90deg, #4a86c0 0%, #3a75ad 100%);
 
-  --bg-primary-color: #f0f4f8;
-  --bg-secondary-color: #d6e8ff;
+  --app-sidebar-width: 250px;
+
+  --bg-primary-color: #f9fafb;
+  --bg-secondary-color: #f5f8fa;
+  --bg-tertiary-color: #d6e8ff;
+  --bg-hover-color: #dbe4f4aa;
+
   --primary-blue: #4a86c0;
   --secondary-blue: #00bfff;
+  --tertiary-blue: #3a75ad;
+
   --primary-gray: #343d42;
   --secondary-gray: #606a70;
   --shadow-primary-color: rgba(255, 199, 0, 0.4);
@@ -29,4 +36,8 @@
 
   --bs-link-color: var(--text-link-color);
   --bs-link-hover-color: var(--text-primary-color);
+}
+
+.offcanvas {
+  --bs-offcanvas-width: var(--app-sidebar-width);
 }
