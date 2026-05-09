@@ -76,3 +76,55 @@
   background-color: rgba(214, 232, 255, 0.2);
   border-radius: var(--bs-border-radius);
 }
+
+.dashboard-card {
+  background-color: #fff;
+  border: 1px solid rgba(112, 123, 138, 0.12);
+  border-radius: 1.5rem;
+}
+
+.dashboard-chip {
+  background-color: #fff;
+  border: 1px solid rgba(112, 123, 138, 0.18);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.dashboard-step-item {
+  background-color: var(--bg-secondary-color);
+}
+
+.dashboard-mini-card {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.dashboard-mini-card-white {
+  background-color: #fff;
+}
+
+.dashboard-card-blue-fill {
+  min-height: 400px;
+}
+
+/* Padronização de cores de texto na dashboard */
+.dashboard-card h1,
+.dashboard-card h2,
+.dashboard-card h3,
+.dashboard-card h4,
+.dashboard-card h5,
+.dashboard-card h6 {
+  color: var(--text-primary-color);
+}
+
+.dashboard-card p,
+.dashboard-card small,
+.dashboard-card span {
+  color: var(--text-secondary-color);
+}
+
+.dashboard-card .text-primary {
+  color: var(--text-primary-color) !important;
+}
+
+.dashboard-card .text-secondary {
+  color: var(--text-secondary-color) !important;
+}
