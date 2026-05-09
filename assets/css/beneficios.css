@@ -51,16 +51,8 @@
 
 .beneficio-item-footer .custo-beneficio {
   font-weight: 600;
-  color: var(--secondary-blue);
-}
-
-.beneficio-item-footer .custo-beneficio.saldo-insuficiente {
-  font-weight: 500;
-  color: var(--secondary-gray);
-}
-
-.beneficio-item-footer .saldo-insuficiente {
-  color: var(--secondary-gray);
+  background-color: rgba(214, 232, 255, 0.2);
+  padding: 0.35rem 0.85rem;
 }
 
 .beneficio-card {
@@ -81,6 +73,14 @@
 .beneficio-icone {
   width: 44px;
   height: 44px;
+}
+
+.beneficios-items-container .dashboard-chip:hover {
+  transform: scale(1.01);
+  .beneficio-icone {
+    transform: scale(1.1);
+  }
+  transition: transform 0.3s ease-in-out;
 }
 
 .beneficio-icone-nutricionista {
@@ -126,22 +126,6 @@
 .beneficio-icone-nutricionista i,
 .beneficio-icone-cafe i {
   color: var(--bs-warning-text-emphasis);
-}
-
-.botao-saldo-insuficiente {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  background-color: var(--bg-secondary-color);
-  color: var(--secondary-gray);
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 0;
-}
-
-.botao-saldo-insuficiente:disabled {
-  opacity: 1;
 }
 
 .beneficios-banner {

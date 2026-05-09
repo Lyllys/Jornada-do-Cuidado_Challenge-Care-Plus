@@ -1,7 +1,7 @@
 /* Estilos para os componentes do layout, como botões, sidebar, etc. */
 
 /*Botões*/
-.btn-brand {
+.btn.btn-brand {
   color: #fff;
   background: var(--btn-primary-color);
   border: 0;
@@ -9,7 +9,8 @@
   transform-origin: center;
 }
 
-.btn-brand:hover {
+.btn.btn-brand:hover,
+.btn.btn-brand:focus {
   color: #fff;
   transform: scale(1.04);
   background-image: none;
@@ -20,11 +21,13 @@
   transform: scale(1.01);
 }
 
-.btn-brand:disabled,
-.btn-brand.disabled {
+.btn.btn-brand:disabled,
+.btn.btn-brand.disabled {
   background: var(--btn-disabled-color);
   transform: none;
   cursor: not-allowed;
+  border: 1px solid var(--btn-disabled-color);
+  color: var(--secondary-gray);
 }
 
 /* App layout (sidebar + navbar) */
@@ -87,6 +90,7 @@
   background-color: #fff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
+
 .dashboard-chip-header {
   font-size: 0.745rem;
   letter-spacing: 0.05em;
