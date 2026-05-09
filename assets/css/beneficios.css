@@ -1,0 +1,163 @@
+.icon-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.saldo-atual-container {
+  background-color: rgba(214, 232, 255, 0.2);
+  width: 40px;
+  height: 40px;
+}
+
+.ganho-semanal-container {
+  background-color: rgba(214, 232, 255, 0.2);
+}
+
+.ganho-semanal {
+  font-size: 0.95rem;
+  color: var(--primary-gray);
+}
+
+.beneficios-summary .dashboard-chip {
+  min-height: 64px;
+}
+
+.dashboard-chip-body.saldo-atual .care-coins-label {
+  font-size: 0.75em;
+  font-weight: 400;
+}
+
+.beneficio-item-header {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--primary-gray);
+  margin: 0;
+}
+
+.beneficio-item-body {
+  font-size: 0.9rem;
+  color: var(--secondary-gray);
+  line-height: 1.35;
+}
+
+.beneficio-item-footer {
+  font-size: 0.9rem;
+  color: var(--secondary-gray);
+}
+
+.beneficio-item-footer .custo-beneficio {
+  font-weight: 600;
+  color: var(--secondary-blue);
+}
+
+.beneficio-item-footer .custo-beneficio.saldo-insuficiente {
+  font-weight: 500;
+  color: var(--secondary-gray);
+}
+
+.beneficio-item-footer .saldo-insuficiente {
+  color: var(--secondary-gray);
+}
+
+.beneficio-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.beneficio-card .beneficio-item-body {
+  flex: 1 1 auto;
+}
+
+.beneficio-card .beneficio-item-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.beneficio-icone {
+  width: 44px;
+  height: 44px;
+}
+
+.beneficio-icone-nutricionista {
+  background-color: var(--bs-warning-bg-subtle);
+}
+
+.beneficio-icone-meditacao {
+  background-color: var(--bs-primary-bg-subtle);
+}
+
+.beneficio-icone-massagem {
+  background-color: var(--bs-success-bg-subtle);
+}
+
+.beneficio-icone-academia {
+  background-color: var(--bs-danger-bg-subtle);
+}
+
+.beneficio-icone-higiene-bucal {
+  background-color: var(--bs-info-bg-subtle);
+}
+
+.beneficio-icone-cafe {
+  background-color: var(--bs-warning-bg-subtle);
+}
+
+.beneficio-icone-academia i {
+  color: var(--bs-danger-text-emphasis);
+}
+
+.beneficio-icone-meditacao i {
+  color: var(--bs-primary-text-emphasis);
+}
+
+.beneficio-icone-massagem i {
+  color: var(--bs-success-text-emphasis);
+}
+
+.beneficio-icone-higiene-bucal i {
+  color: var(--bs-info-text-emphasis);
+}
+
+.beneficio-icone-nutricionista i,
+.beneficio-icone-cafe i {
+  color: var(--bs-warning-text-emphasis);
+}
+
+.botao-saldo-insuficiente {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background-color: var(--bg-secondary-color);
+  color: var(--secondary-gray);
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 0;
+}
+
+.botao-saldo-insuficiente:disabled {
+  opacity: 1;
+}
+
+.beneficios-banner {
+  background-color: rgba(214, 232, 255, 0.2);
+}
+
+.banner-container {
+  background-color: #fff;
+}
+
+.beneficios-banner-title {
+  font-weight: 600;
+  color: var(--primary-gray);
+}
+
+.beneficios-banner-subtitle {
+  font-size: 0.9rem;
+  color: var(--secondary-gray);
+}

@@ -1,5 +1,6 @@
 :root {
   --btn-primary-color: linear-gradient(90deg, #4a86c0 0%, #3a75ad 100%);
+  --btn-disabled-color: #f1f5f9;
 
   --app-sidebar-width: 250px;
 

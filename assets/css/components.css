@@ -22,9 +22,9 @@
 
 .btn-brand:disabled,
 .btn-brand.disabled {
-  color: #fff;
-  opacity: 0.65;
+  background: var(--btn-disabled-color);
   transform: none;
+  cursor: not-allowed;
 }
 
 /* App layout (sidebar + navbar) */
@@ -85,8 +85,16 @@
 
 .dashboard-chip {
   background-color: #fff;
-  border: 1px solid rgba(112, 123, 138, 0.18);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+.dashboard-chip-header {
+  font-size: 0.745rem;
+  letter-spacing: 0.05em;
+}
+
+.dashboard-chip-body {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 .dashboard-step-item {
