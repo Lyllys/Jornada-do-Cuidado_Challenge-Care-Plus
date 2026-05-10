@@ -1,6 +1,11 @@
 function loadLayout() {
   const sidebarContainer = document.getElementById('layout-sidebar');
 
+  const saldoCareCoins = 2450;
+  const saldoCareCoinsFormatado = new Intl.NumberFormat('pt-BR').format(
+    saldoCareCoins,
+  );
+
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
   const menuHTML = `
@@ -16,7 +21,7 @@ function loadLayout() {
               <div class="rounded-5 py-2 px-3 border border-primary saldo-care-coins-container d-flex align-items-center">
                <img src="./assets/images/icons/icon-care-coin.svg" alt="Ícone da Care Coin"/>  
               <span class="ps-2 my-1 text-primary">
-                2450 <span class="d-none d-md-inline">Care Coins</span></span>
+                <span id="totalCareCoins">${saldoCareCoinsFormatado}</span> <span class="d-none d-md-inline">Care Coins</span></span>
               </div>
               <div><span><i class="fa-solid fa-bell fa-xl"></i></span></div>
               <div>
@@ -72,6 +77,14 @@ function loadLayout() {
 
   if (sidebarContainer) {
     sidebarContainer.innerHTML = menuHTML;
+
+    document.dispatchEvent(
+      new CustomEvent('layout:carregado', {
+        detail: {
+          paginaAtual: currentPage,
+        },
+      }),
+    );
   }
 }
 

@@ -53,6 +53,7 @@
   font-weight: 600;
   background-color: rgba(214, 232, 255, 0.2);
   padding: 0.35rem 0.85rem;
+  border-radius: var(--bs-border-radius);
 }
 
 .beneficio-card {
@@ -144,4 +145,22 @@
 .beneficios-banner-subtitle {
   font-size: 0.9rem;
   color: var(--secondary-gray);
+}
+
+.beneficio-modal-resgate .modal-dialog {
+  max-width: 400px;
+}
+
+.beneficio-modal-resgate .modal-content {
+  border-radius: 1.5rem;
+}
+
+.beneficio-modal-resgate .modal-body {
+  padding: 2.25rem 2rem 2rem;
+}
+
+.beneficio-modal-resgate .modal-resgate-icon {
+  width: 76px;
+  height: 76px;
+  background-color: rgba(var(--bs-primary-rgb), 0.12);
 }

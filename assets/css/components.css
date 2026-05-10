@@ -5,6 +5,7 @@
   color: #fff;
   background: var(--btn-primary-color);
   border: 0;
+  border-radius: var(--bs-border-radius);
   transition: transform 140ms ease;
   transform-origin: center;
 }

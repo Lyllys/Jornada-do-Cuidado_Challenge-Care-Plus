@@ -47,7 +47,7 @@
 
               <div class="beneficios-summary d-flex flex-wrap gap-3 my-4">
                 <div
-                  class="dashboard-chip px-3 py-2 rounded-4 d-flex flex-row align-items-center"
+                  class="dashboard-chip px-3 py-2 d-flex flex-row align-items-center"
                 >
                   <div class="icon-container saldo-atual-container me-3">
                     <span
@@ -60,7 +60,7 @@
                     </div>
                     <div class="dashboard-chip-body saldo-atual">
                       <span>
-                        1.250
+                        <span id="totalCareCoinsResumo">2.450</span>
                         <span class="care-coins-label">Care Coins</span>
                       </span>
                     </div>
@@ -68,7 +68,7 @@
                 </div>
 
                 <div
-                  class="dashboard-chip px-3 py-2 rounded-4 d-flex flex-row align-items-center"
+                  class="dashboard-chip px-3 py-2 d-flex flex-row align-items-center"
                 >
                   <div class="icon-container ganho-semanal-container me-3">
                     <span
@@ -85,7 +85,7 @@
             <div class="col-12 beneficios-items-container">
               <div class="row g-4">
                 <div class="col-12 col-md-6 col-lg-4">
-                  <div class="dashboard-chip p-4 rounded-4 beneficio-card">
+                  <div class="dashboard-chip p-4 beneficio-card">
                     <div
                       class="icon-container beneficio-icone beneficio-icone-nutricionista"
                     >
@@ -102,7 +102,7 @@
                       class="beneficio-item-footer mt-4 d-flex justify-content-between align-items-center"
                     >
                       <div
-                        class="custo-beneficio rounded-4 py-2 px-3 d-flex align-items-center"
+                        class="custo-beneficio py-2 px-3 d-flex align-items-center"
                       >
                         <img
                           src="./assets/images/icons/icon-care-coin.svg"
@@ -110,15 +110,15 @@
                         />
                         <span class="ps-2 my-1 text-primary">2.000</span>
                       </div>
-                      <button class="btn btn-brand" disabled>
-                        Saldo insuficiente
+                      <button class="btn btn-brand btn-resgatar">
+                        Resgatar
                       </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                  <div class="dashboard-chip p-4 rounded-4 beneficio-card">
+                  <div class="dashboard-chip p-4 beneficio-card">
                     <div
                       class="icon-container beneficio-icone beneficio-icone-meditacao"
                     >
@@ -135,7 +135,7 @@
                       class="beneficio-item-footer mt-4 d-flex justify-content-between align-items-center"
                     >
                       <div
-                        class="custo-beneficio rounded-4 py-2 px-3 d-flex align-items-center"
+                        class="custo-beneficio py-2 px-3 d-flex align-items-center"
                       >
                         <img
                           src="./assets/images/icons/icon-care-coin.svg"
@@ -143,15 +143,15 @@
                         />
                         <span class="ps-2 my-1 text-primary">2.000</span>
                       </div>
-                      <button class="btn btn-brand" disabled>
-                        Saldo insuficiente
+                      <button class="btn btn-brand btn-resgatar">
+                        Resgatar
                       </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                  <div class="dashboard-chip p-4 rounded-4 beneficio-card">
+                  <div class="dashboard-chip p-4 beneficio-card">
                     <div
                       class="icon-container beneficio-icone beneficio-icone-massagem"
                     >
@@ -168,7 +168,7 @@
                       class="beneficio-item-footer mt-4 d-flex justify-content-between align-items-center"
                     >
                       <div
-                        class="custo-beneficio rounded-4 py-2 px-3 d-flex align-items-center"
+                        class="custo-beneficio py-2 px-3 d-flex align-items-center"
                       >
                         <img
                           src="./assets/images/icons/icon-care-coin.svg"
@@ -176,13 +176,19 @@
                         />
                         <span class="ps-2 my-1 text-primary">750</span>
                       </div>
-                      <button class="btn btn-brand px-3">Resgatar</button>
+                      <button
+                        class="btn btn-brand btn-resgatar"
+                        type="button"
+                        data-action="resgatar"
+                      >
+                        Resgatar
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                  <div class="dashboard-chip p-4 rounded-4 beneficio-card">
+                  <div class="dashboard-chip p-4 beneficio-card">
                     <div
                       class="icon-container beneficio-icone beneficio-icone-academia"
                     >
@@ -199,7 +205,7 @@
                       class="beneficio-item-footer mt-4 d-flex justify-content-between align-items-center"
                     >
                       <div
-                        class="custo-beneficio rounded-4 py-2 px-3 d-flex align-items-center"
+                        class="custo-beneficio py-2 px-3 d-flex align-items-center"
                       >
                         <img
                           src="./assets/images/icons/icon-care-coin.svg"
@@ -207,13 +213,19 @@
                         />
                         <span class="ps-2 my-1 text-primary">750</span>
                       </div>
-                      <button class="btn btn-brand px-3">Resgatar</button>
+                      <button
+                        class="btn btn-brand btn-resgatar"
+                        type="button"
+                        data-action="resgatar"
+                      >
+                        Resgatar
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                  <div class="dashboard-chip p-4 rounded-4 beneficio-card">
+                  <div class="dashboard-chip p-4 beneficio-card">
                     <div
                       class="icon-container beneficio-icone beneficio-icone-higiene-bucal"
                     >
@@ -229,7 +241,7 @@
                       class="beneficio-item-footer mt-4 d-flex justify-content-between align-items-center"
                     >
                       <div
-                        class="custo-beneficio rounded-4 py-2 px-3 d-flex align-items-center"
+                        class="custo-beneficio py-2 px-3 d-flex align-items-center"
                       >
                         <img
                           src="./assets/images/icons/icon-care-coin.svg"
@@ -237,13 +249,19 @@
                         />
                         <span class="ps-2 my-1 text-primary">500</span>
                       </div>
-                      <button class="btn btn-brand px-3">Resgatar</button>
+                      <button
+                        class="btn btn-brand btn-resgatar"
+                        type="button"
+                        data-action="resgatar"
+                      >
+                        Resgatar
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
-                  <div class="dashboard-chip p-4 rounded-4 beneficio-card">
+                  <div class="dashboard-chip p-4 beneficio-card">
                     <div
                       class="icon-container beneficio-icone beneficio-icone-cafe"
                     >
@@ -258,7 +276,7 @@
                       class="beneficio-item-footer mt-4 d-flex justify-content-between align-items-center"
                     >
                       <div
-                        class="custo-beneficio rounded-4 py-2 px-3 d-flex align-items-center"
+                        class="custo-beneficio py-2 px-3 d-flex align-items-center"
                       >
                         <img
                           src="./assets/images/icons/icon-care-coin.svg"
@@ -266,7 +284,13 @@
                         />
                         <span class="ps-2 my-1 text-primary">200</span>
                       </div>
-                      <button class="btn btn-brand px-3">Resgatar</button>
+                      <button
+                        class="btn btn-brand btn-resgatar"
+                        type="button"
+                        data-action="resgatar"
+                      >
+                        Resgatar
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -275,7 +299,7 @@
 
             <div class="col-12 mt-2">
               <div
-                class="dashboard-chip p-4 rounded-4 beneficios-banner d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3"
+                class="dashboard-chip p-4 beneficios-banner d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3"
               >
                 <div class="d-flex align-items-center gap-3">
                   <div class="icon-container banner-container">
@@ -298,10 +322,55 @@
       </main>
     </div>
 
+    <!-- Modal de confirmação de resgate -->
+    <div
+      class="modal fade beneficio-modal-resgate"
+      id="modalResgate"
+      tabindex="-1"
+      aria-labelledby="modalResgateTitle"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow">
+          <div class="modal-body text-center">
+            <button
+              type="button"
+              class="btn-close position-absolute top-0 end-0 m-3"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+
+            <div
+              class="modal-resgate-icon mx-auto rounded-circle d-flex align-items-center justify-content-center mb-3"
+            >
+              <i class="fa-solid fa-gift text-primary fs-3"></i>
+            </div>
+
+            <h4 class="mb-1 fw-semibold" id="modalResgateTitle">
+              Resgate feito com sucesso!
+            </h4>
+            <p class="text-secondary mb-4" id="modalResgateSubtitle">
+              Você resgatou:
+              <span class="fw-semibold" id="modalResgateBeneficio">-</span>!
+            </p>
+            <p>O código foi enviado para seu e-mail.</p>
+
+            <button
+              type="button"
+              class="btn btn-brand w-50 py-2"
+              data-bs-dismiss="modal"
+            >
+              Fechar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/beneficios.js"></script>
   </body>
 </html>
