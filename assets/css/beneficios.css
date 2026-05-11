@@ -18,7 +18,7 @@
   width: 150px;
   height: 150px;
   object-fit: contain;
-  animation: aceno 3s ease-in-out infinite;
+  animation: duo-float 4s ease-in-out infinite;
 }
 
 .balao-de-fala {
@@ -63,7 +63,7 @@
 
 .beneficio-item-footer .custo-beneficio {
   font-weight: 600;
-  background-color: rgba(214, 232, 255, 0.2);
+  background-color: var(--bg-light-color);
   padding: 0.35rem 0.85rem;
   border-radius: var(--bs-border-radius);
 }
@@ -89,7 +89,7 @@
 }
 
 .beneficios-items-container .dashboard-chip:hover {
-  transform: scale(1.01);
+  transform: var(--transform-hover);
   .beneficio-icone {
     transform: scale(1.1);
   }
@@ -142,11 +142,11 @@
 }
 
 .beneficios-banner {
-  background-color: rgba(214, 232, 255, 0.2);
+  background-color: var(--bg-light-color);
 }
 
 .banner-container {
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .beneficios-banner-title {
@@ -178,15 +178,12 @@
 }
 
 /* Animações */
-@keyframes aceno {
+@keyframes duo-float {
   0%,
   100% {
-    transform: rotate(0deg);
+    transform: translateY(0) rotate(-2deg);
   }
-  25% {
-    transform: rotate(15deg);
-  }
-  75% {
-    transform: rotate(-15deg);
+  50% {
+    transform: translateY(-15px) rotate(3deg);
   }
 }
