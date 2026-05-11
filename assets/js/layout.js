@@ -18,12 +18,40 @@ function loadLayout() {
               </button>
             </div>
             <div class="navbar-itens-direita d-flex gap-4 align-items-center">
-              <div class="rounded-5 py-2 px-3 border border-primary saldo-care-coins-container d-flex align-items-center">
+              <a href="beneficios.html" class="rounded-5 py-2 px-3 border border-primary saldo-care-coins-container d-flex align-items-center">
                <img src="./assets/images/icons/icon-care-coin.svg" alt="Ícone da Care Coin"/>  
               <span class="ps-2 my-1 text-primary">
                 <span id="totalCareCoins">${saldoCareCoinsFormatado}</span> <span class="d-none d-md-inline">Care Coins</span></span>
+              </a>
+
+
+              <div class="dropdown" id="notificacoesDropdown">
+                <button type="button" class="position-relative btn border-0 bg-transparent"data-bs-toggle="dropdown" aria-expanded="false" id="btnNotifcacoes">
+                  <span><i class="fa-solid fa-bell fa-xl"></i></span>
+                  <span class="position-absolute translate-middle p-2 bg-danger border border-light rounded-circle notificacao-pulse" id="notificacoesBadge" >
+                    <span class="visually-hidden">Novas notificações</span>
+                  </span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end dropdown-notificacoes p-0 shadow-lg mt-3">
+                  <div class="bg-primary p-3 text-white d-flex justify-content-between align-items-center" style="border-radius: 1.2rem 1.2rem 0 0;">
+                    <span class="fw-bold" style="font-size: 0.95rem;">
+                        <i class="fa-solid fa-umbrella me-2"></i>Já separou o guarda-chuva?
+                    </span>
+                  </div>
+                  <div class="p-3">
+                    <div class="d-flex gap-3">
+                      <div>
+                        <h6 class="fw-bold mb-1">Vi aqui que tem previsão de chuva hoje.</h6>
+                        <p class="small mb-2">
+                         Sua consulta é às 14h30, então é bom se preparar para não se molhar no caminho!
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div><span><i class="fa-solid fa-bell fa-xl"></i></span></div>
+
+              
               <div>
                 <img src="./assets/images/profile-picture.png" class="img-thumbnail rounded-circle border-0" alt="Foto de perfil" width="60px" height="60px" />
               </div>
@@ -75,8 +103,23 @@ function loadLayout() {
       </nav>
   `;
 
+  function onVisualizarNotificacoes() {
+    const btnNotificoes = document.getElementById('btnNotifcacoes');
+
+    if (btnNotificoes) {
+      btnNotificoes.addEventListener('click', () => {
+        const badge = document.getElementById('notificacoesBadge');
+        if (badge) {
+          badge.style.display = 'none';
+        }
+      });
+    }
+  }
+
   if (sidebarContainer) {
     sidebarContainer.innerHTML = menuHTML;
+
+    onVisualizarNotificacoes();
 
     document.dispatchEvent(
       new CustomEvent('layout:carregado', {

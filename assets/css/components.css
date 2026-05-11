@@ -2,7 +2,7 @@
 
 /*Botões*/
 .btn.btn-brand {
-  color: #fff;
+  color: var(--white-color);
   background: var(--btn-primary-color);
   border: 0;
   border-radius: var(--bs-border-radius);
@@ -12,14 +12,15 @@
 
 .btn.btn-brand:hover,
 .btn.btn-brand:focus {
-  color: #fff;
-  transform: scale(1.04);
+  color: var(--white-color);
+  transform: var(--transform-hover);
   background-image: none;
   background-color: var(--primary-blue);
+  box-shadow: var(--hover-shadow);
 }
 
 .btn-brand:active {
-  transform: scale(1.01);
+  transform: var(--transform-hover);
 }
 
 .btn.btn-brand:disabled,
@@ -41,8 +42,16 @@
 }
 
 .saldo-care-coins-container {
-  background-color: var(--bg-hover-color);
+  background-color: var(--white-color);
   border-radius: var(--bs-border-radius);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.saldo-care-coins-container:hover {
+  transform: var(--transform-hover);
+  background-color: var(--white-color);
+  box-shadow:;
 }
 
 #offcanvasScrolling.offcanvas-container {
@@ -81,15 +90,41 @@
   border-radius: var(--bs-border-radius);
 }
 
+.dropdown-notificacoes {
+  width: 320px;
+  border-radius: 1.2rem;
+  border: none;
+  overflow: hidden;
+  left: -190px;
+}
+
+.dropdown-menu.dropdown-notificacoes {
+  left: -190px;
+}
+
+.dropdown-menu.dropdown-notificacoes.notificao-icon-container {
+  width: 40px;
+  height: 40px;
+  background-color: var(--bg-light-color);
+}
+
+#notificacoesDropdown:hover button#btnNotifcacoes {
+  transform: var(--transform-hover);
+}
+
+.notificacao-pulse {
+  animation: pulse-red 2s infinite;
+}
+
 .dashboard-card {
-  background-color: #fff;
+  background-color: var(--white-color);
   border: 1px solid rgba(112, 123, 138, 0.12);
   border-radius: 1.5rem;
 }
 
 .dashboard-chip {
-  background-color: #fff;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  background-color: var(--white-color);
+  box-shadow: var(--hover-shadow);
   border-radius: var(--bs-border-radius);
 }
 
@@ -112,7 +147,7 @@
 }
 
 .dashboard-mini-card-white {
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 .dashboard-card-blue-fill {
@@ -141,4 +176,19 @@
 
 .dashboard-card .text-secondary {
   color: var(--text-secondary-color) !important;
+}
+
+@keyframes pulse-red {
+  0% {
+    transform: translate(-50%, -50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
 }
