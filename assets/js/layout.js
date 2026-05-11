@@ -28,22 +28,43 @@ function loadLayout() {
               <div class="dropdown" id="notificacoesDropdown">
                 <button type="button" class="position-relative btn border-0 bg-transparent"data-bs-toggle="dropdown" aria-expanded="false" id="btnNotifcacoes">
                   <span><i class="fa-solid fa-bell fa-xl"></i></span>
-                  <span class="position-absolute translate-middle p-2 bg-danger border border-light rounded-circle notificacao-pulse" id="notificacoesBadge" >
-                    <span class="visually-hidden">Novas notificações</span>
+                  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light rounded-circle notificacao-pulse" id="notificacoesBadge" >
+                   2
                   </span>
                 </button>
-                <div class="dropdown-menu dropdown-menu-end dropdown-notificacoes p-0 shadow-lg mt-3">
-                  <div class="bg-primary p-3 text-white d-flex justify-content-between align-items-center" style="border-radius: 1.2rem 1.2rem 0 0;">
+                <div class="dropdown-menu dropdown-menu-end dropdown-notificacoes-content p-0 shadow-lg mt-3">
+                  <div class="dropdown-notificacoes-header  bg-primary p-3 text-white d-flex justify-content-between align-items-center">
                     <span class="fw-bold" style="font-size: 0.95rem;">
-                        <i class="fa-solid fa-umbrella me-2"></i>Já separou o guarda-chuva?
+                          Recadinhos do Care
                     </span>
+                    <img src="./assets/images/mascote/care-beijo.png" alt="Care (mascote da Care plus) enviando um beijo" class="me-2 care-mascote-beijo" style="width: 80px; height: 80px;"/>  
                   </div>
+                  <div class="p-3 border-bottom">
+                    <div class="d-flex gap-3">
+                      <div class="notificao-icon-container rounded-circle p-2 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="fa-solid fa-car-side text-primary"></i>
+                      </div>
+                      <div>
+                          <p class="fw-bold mb-1 fs-6 fs-6">Nada de voltas no quarteirão!</p>
+                          <p class="small mb-2">
+                            Bota o cinto e relaxa! Minerei os melhores cantinhos pra você estacionar sem estresse e com aquele desconto de quem é especial.
+                          </p>
+                          <a href="#" class="small text-secondary fw-bold text-decoration-none" data-bs-toggle="modal" data-bs-target="#modalEstacionamento">
+                            Onde eu paro o carro?
+                          </a>
+                        </div>
+                    </div>
+                  </div>
+
                   <div class="p-3">
                     <div class="d-flex gap-3">
+                      <div class="notificao-icon-container rounded-circle p-2 flex-shrink-0 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                        <i class="fa-solid fa-umbrella text-primary"></i>
+                      </div>
                       <div>
-                        <h6 class="fw-bold mb-1">Vi aqui que tem previsão de chuva hoje.</h6>
+                        <p class="fw-bold mb-1 fs-6 fs-6">Já separou o guarda-chuva?</p>
                         <p class="small mb-2">
-                         Sua consulta é às 14h30, então é bom se preparar para não se molhar no caminho!
+                         Sua consulta é às <span class="fw-bold">14h30</span>, então é bom se preparar para não se molhar no caminho!
                         </p>
                       </div>
                     </div>
@@ -101,6 +122,87 @@ function loadLayout() {
           </div>
         </div>
       </nav>
+
+  
+      <!-- Modal Estacionamento -->
+      <div class="modal fade" id="modalEstacionamento" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div
+            class="modal-content border-0 shadow rounded-4"
+          >
+            <div class="modal-header border-0 pt-4 px-4">
+              <h4 class="fw-bold text-primary mb-0">
+                <i class="fa-solid fa-square-p me-2"></i>Parceiros de
+                Estacionamento
+              </h4>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body p-4">
+              <p class=" mb-4">
+                Mostre o seu check-in digital e ganhe descontos exclusivos!
+              </p>
+
+              <div
+                class="parking-item d-flex justify-content-between align-items-center rounded-3 p-3 mb-3 border border-gray-300"
+              >
+                <div>
+                  <p class="fw-bold mb-1 fs-6">Estapar - Clínica Paulista</p>
+                  <p class="text-secondary small mb-0"
+                    ><i class="fa-solid fa-location-dot me-1"></i> 50 metros de
+                    distância</p
+                  >
+                </div>
+                <span class="badge bg-success-subtle text-success rounded-pill"
+                  >Grátis 1h</span
+                >
+              </div>
+
+              <div
+                class="parking-item d-flex justify-content-between align-items-center rounded-3 p-3 mb-3 border border-gray-300"
+              >
+                <div>
+                  <p class="fw-bold mb-1 fs-6">Indigo Park - Unidade A</p>
+                  <p class="text-secondary small mb-0"
+                    ><i class="fa-solid fa-location-dot me-1"></i> 120 metros de
+                    distância</p
+                  >
+                </div>
+                <span class="badge bg-success-subtle text-success rounded-pill"
+                  >Grátis 1h</span
+                >
+              </div>
+
+              <div
+                class="parking-item d-flex justify-content-between align-items-center rounded-3 p-3 mb-3 border border-gray-300"
+              >
+                <div>
+                  <p class="fw-bold mb-1 fs-6">Park & Care - Conveniado</p>
+                  <p class="text-secondary small mb-0"
+                    ><i class="fa-solid fa-location-dot me-1"></i>10 metros
+                    (Anexo)</p
+                  >
+                </div>
+                <span class="badge bg-success-subtle text-success rounded-pill"
+                  >Grátis 1h</span
+                >
+              </div>
+              <div class="text-center mt-4">
+                <button
+                  class="btn btn-brand"
+                  data-bs-dismiss="modal"
+                >
+                  Vrumm, entendi!
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   `;
 
   function onVisualizarNotificacoes() {
