@@ -90,6 +90,7 @@
 .dashboard-chip {
   background-color: #fff;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  border-radius: var(--bs-border-radius);
 }
 
 .dashboard-chip-header {

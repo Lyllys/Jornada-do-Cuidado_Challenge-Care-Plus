@@ -31,52 +31,29 @@
 
       <main class="app-main">
         <div class="container-fluid py-4">
-          <div class="row g-4">
+          <div class="row">
             <div class="col-12">
               <div
                 class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2 mb-2"
               >
                 <div>
                   <h1 class="mb-1">Catálogo de Benefícios</h1>
-                  <p class="text-secondary mb-0">
-                    Use seus Care Coins para resgatar recompensas incríveis e
-                    investir no seu bem- estar.
-                  </p>
                 </div>
               </div>
 
-              <div class="beneficios-summary d-flex flex-wrap gap-3 my-4">
-                <div
-                  class="dashboard-chip px-3 py-2 d-flex flex-row align-items-center"
-                >
-                  <div class="icon-container saldo-atual-container me-3">
-                    <span
-                      ><i class="fa-solid fa-dollar-sign text-primary"></i
-                    ></span>
-                  </div>
-                  <div class="d-flex flex-column align-items-start">
-                    <div class="dashboard-chip-header">
-                      <span class="text-uppercase">SEU SALDO ATUAL</span>
-                    </div>
-                    <div class="dashboard-chip-body saldo-atual">
-                      <span>
-                        <span id="totalCareCoinsResumo">2.450</span>
-                        <span class="care-coins-label">Care Coins</span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
+              <div class="col-12 mt-4">
+                <div class="mascote-container">
+                  <img
+                    src="./assets/images/mascote/care-beneficios.png"
+                    alt="Care (Mascote da Care Plus) sorrindo e segurando uma maçã e um voucher de desconto de 10%"
+                    class="mascote-img-mini"
+                  />
 
-                <div
-                  class="dashboard-chip px-3 py-2 d-flex flex-row align-items-center"
-                >
-                  <div class="icon-container ganho-semanal-container me-3">
-                    <span
-                      ><i class="fa-solid fa-chart-line text-primary"></i
-                    ></span>
-                  </div>
-                  <div class="dashboard-chip-body ganho-semanal">
-                    <span>Você ganhou 150 Care Coins esta semana!</span>
+                  <div class="balao-de-fala shadow-sm">
+                    <p class="fw-bold mb-1">Saúde em dia, mente tranquila.</p>
+                    <p class="text-secondary mb-0 small">
+                      Bora transformar seus Care Coins em autocuidado?
+                    </p>
                   </div>
                 </div>
               </div>
@@ -345,21 +322,21 @@
               <i class="fa-solid fa-gift text-primary fs-3"></i>
             </div>
 
-            <h4 class="mb-1 fw-semibold" id="modalResgateTitle">
+            <p class="fw-semibold fs-5" id="modalResgateTitle">
               Resgate feito com sucesso!
-            </h4>
-            <p class="text-secondary mb-4" id="modalResgateSubtitle">
+            </p>
+            <p class="text-secondary mb-2" id="modalResgateSubtitle">
               Você resgatou:
               <span class="fw-semibold" id="modalResgateBeneficio">-</span>!
             </p>
-            <p>O código foi enviado para seu e-mail.</p>
+            <p class="mb-4">O código foi enviado para seu e-mail.</p>
 
             <button
               type="button"
-              class="btn btn-brand w-50 py-2"
+              class="btn btn-brand w-50 py-2 btn-block text-wrap"
               data-bs-dismiss="modal"
             >
-              Fechar
+              Continuar a cuidar de mim
             </button>
           </div>
         </div>

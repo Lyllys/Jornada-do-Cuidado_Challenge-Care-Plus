@@ -7,28 +7,40 @@
   justify-content: center;
 }
 
-.saldo-atual-container {
-  background-color: rgba(214, 232, 255, 0.2);
-  width: 40px;
-  height: 40px;
+.mascote-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 1rem;
 }
 
-.ganho-semanal-container {
-  background-color: rgba(214, 232, 255, 0.2);
+.mascote-img-mini {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  animation: aceno 3s ease-in-out infinite;
 }
 
-.ganho-semanal {
+.balao-de-fala {
+  position: relative;
+  background: white;
+  border-radius: 1.5rem;
+  padding: 15px 25px;
   font-size: 0.95rem;
-  color: var(--primary-gray);
 }
 
-.beneficios-summary .dashboard-chip {
-  min-height: 64px;
-}
-
-.dashboard-chip-body.saldo-atual .care-coins-label {
-  font-size: 0.75em;
-  font-weight: 400;
+.balao-de-fala::after {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 12px 12px 12px 0;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
 }
 
 .beneficio-item-header {
@@ -148,7 +160,7 @@
 }
 
 .beneficio-modal-resgate .modal-dialog {
-  max-width: 400px;
+  max-width: 500px;
 }
 
 .beneficio-modal-resgate .modal-content {
@@ -163,4 +175,18 @@
   width: 76px;
   height: 76px;
   background-color: rgba(var(--bs-primary-rgb), 0.12);
+}
+
+/* Animações */
+@keyframes aceno {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
 }
