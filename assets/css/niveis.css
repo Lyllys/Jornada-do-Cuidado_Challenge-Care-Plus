@@ -1,0 +1,449 @@
+.page-title {
+    font-size: 1.45rem;
+    /* font-weight: 80; */
+    color: var(--primary-gray);
+    margin-bottom: 2px;
+}
+
+.page-subtitle {
+    font-size: 0.875rem;
+    color: var(--secondary-gray);
+    margin-bottom: 0;
+}
+
+.card-niveis {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid rgba(74, 134, 192, 0.1);
+    box-shadow: 0 2px 8px rgba(74, 134, 192, 0.08);
+}
+
+.card-niveis-header {
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid rgba(74, 134, 192, 0.07);
+}
+
+.card-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--primary-blue);
+    margin-bottom: 2px;
+}
+
+.card-niveis-header h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    margin: 0;
+}
+
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 34px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+            var(--bg-tertiary-color),
+            var(--primary-blue) 50%,
+            var(--bg-tertiary-color));
+    z-index: 0;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 20px;
+    position: relative;
+    transition: background-color 180ms ease;
+}
+
+.timeline-item:hover {
+    background-color: rgba(214, 232, 255, 0.15);
+}
+
+.timeline-item+.timeline-item {
+    border-top: 1px solid rgba(74, 134, 192, 0.06);
+}
+
+.timeline-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    transition: transform 180ms ease;
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.1);
+}
+
+.timeline-icon.bloqueado {
+    background-color: #e8e8e8;
+    color: #adadad;
+}
+
+.timeline-icon.atual {
+    background-color: var(--primary-blue);
+    color: #fff;
+    box-shadow: 0 0 0 4px rgba(74, 134, 192, 0.2);
+}
+
+.timeline-icon.concluido {
+    background-color: #cd7f32;
+    color: #fff;
+    box-shadow: 0 0 0 3px rgba(205, 127, 50, 0.2);
+}
+
+.timeline-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.timeline-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 3px;
+}
+
+.nivel-nome {
+    font-size: 0.97rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    margin: 0;
+}
+
+.nivel-descricao {
+    font-size: 0.81rem;
+    color: var(--secondary-gray);
+    margin: 0 0 6px 0;
+    line-height: 1.45;
+}
+
+.nivel-recompensa {
+    font-size: 0.77rem;
+    color: var(--secondary-gray);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nivel-recompensa i {
+    color: #ffc107;
+}
+
+.badge-nivel {
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    white-space: nowrap;
+}
+
+.badge-nivel.bloqueado {
+    background-color: #f0f0f0;
+    color: #9e9e9e;
+}
+
+.badge-nivel.concluido {
+    background-color: var(--bg-tertiary-color);
+    color: var(--tertiary-blue);
+}
+
+.badge-nivel-atual {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: var(--bg-tertiary-color);
+    color: var(--tertiary-blue);
+    border-radius: 4px;
+    padding: 2px 7px;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+.progresso-bloco {
+    margin-top: 8px;
+}
+.progresso-pts {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.pts-valor {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--primary-blue);
+    line-height: 1;
+}
+
+.pts-label {
+    font-size: 0.63rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: var(--secondary-gray);
+}
+
+.barra-progresso {
+    height: 7px;
+    background-color: var(--bg-tertiary-color);
+    border-radius: 50px;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+
+
+.barra-fill {
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
+    transition: width 600ms ease;
+}
+
+.barra-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.71rem;
+    color: var(--secondary-gray);
+}
+
+.texto-faltam {
+    font-size: 0.78rem;
+    color: var(--secondary-gray);
+    margin: 6px 0 0 0;
+}
+
+.texto-faltam strong {
+    color: var(--primary-blue);
+}
+
+.medalhas-card {
+    padding: 18px 20px;
+}
+
+.medalhas-titulo {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.medalhas-titulo i {
+    color: var(--primary-blue);
+}
+
+.medalhas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.medalha-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.medalha-icone {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    transition: transform 180ms ease;
+}
+
+.medalha-icone.conquistada {
+    background-color: var(--bg-tertiary-color);
+    color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(74, 134, 192, 0.15);
+}
+
+.medalha-icone.bloqueada {
+    background-color: #f0f0f0;
+    color: #c0c0c0;
+}
+
+.medalha-item:hover .medalha-icone.conquistada {
+    transform: scale(1.1);
+}
+
+.medalha-nome {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.medalha-item.bloqueada .medalha-nome {
+    color: #b5b5b5;
+}
+
+.medalha-data {
+    font-size: 0.67rem;
+    color: var(--secondary-gray);
+    margin: 0;
+}
+
+.btn-medalhas {
+    width: 100%;
+    background-color: var(--bg-tertiary-color);
+    color: var(--primary-blue);
+    border: none;
+    border-radius: 8px;
+    padding: 9px 14px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    transition: background-color 160ms ease, transform 140ms ease;
+}
+
+.btn-medalhas:hover {
+    background-color: #c2d9ff;
+    transform: scale(1.02);
+}
+
+.dica-card {
+    background: linear-gradient(135deg, var(--tertiary-blue) 0%, var(--primary-blue) 100%);
+    border-radius: 12px;
+    padding: 18px 20px;
+    color: #fff;
+    margin-top: 14px;
+    position: relative;
+    overflow: hidden;
+}
+
+.dica-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.07);
+    pointer-events: none;
+}
+
+.dica-label {
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dica-titulo {
+    font-size: 1rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    line-height: 1.35;
+}
+
+.dica-texto {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    margin: 0 0 14px 0;
+}
+
+.dica-link {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-underline-offset: 3px;
+    transition: opacity 150ms;
+}
+
+.dica-link:hover {
+    color: #fff;
+    opacity: 0.75;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-in {
+    opacity: 0;
+    animation: fadeUp 380ms ease forwards;
+}
+
+.animate-in[data-delay="1"] {
+    animation-delay: 80ms;
+}
+
+.animate-in[data-delay="2"] {
+    animation-delay: 160ms;
+}
+
+.animate-in[data-delay="3"] {
+    animation-delay: 240ms;
+}
+
+@media (max-width: 767px) {
+
+    .timeline::before {
+        left: 26px;
+    }
+
+    .timeline-item {
+        padding: 14px 16px;
+    }
+
+    .page-title {
+        font-size: 1.2rem;
+    }
+}
