@@ -106,10 +106,15 @@
     box-shadow: 0 0 0 4px rgba(74, 134, 192, 0.2);
 }
 
-.timeline-icon.concluido {
+.timeline-icon.concluido.bronze{
     background-color: #cd7f32;
     color: #fff;
     box-shadow: 0 0 0 3px rgba(205, 127, 50, 0.2);
+}
+.timeline-icon.concluido.prata{
+    background-color: #a0a0b2;
+    color: #fff;
+    box-shadow: 0 0 0 3px rgba(50, 91, 205, 0.2);
 }
 
 .timeline-content {
@@ -188,6 +193,7 @@
 .progresso-bloco {
     margin-top: 8px;
 }
+
 .progresso-pts {
     display: flex;
     align-items: baseline;
@@ -403,6 +409,404 @@
     color: #fff;
     opacity: 0.75;
 }
+
+.modal-medalhas {
+    border-radius: 16px;
+    border: none;
+    overflow: hidden;
+}
+
+.modal-medalhas-header {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(74, 134, 192, 0.1);
+    padding: 20px 24px;
+    align-items: flex-start;
+}
+
+.modal-medalhas-header .modal-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary-gray);
+    margin-bottom: 2px;
+}
+
+.modal-medalhas-header .modal-subtitle {
+    font-size: 0.82rem;
+    color: var(--secondary-gray);
+    margin: 0;
+}
+
+.modal-medalhas-body {
+    background-color: var(--bg-primary-color);
+    padding: 24px;
+}
+
+.btn-filtro {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background-color: var(--bg-tertiary-color);
+    color: var(--primary-blue);
+    border: none;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 160ms ease, transform 140ms ease;
+    white-space: nowrap;
+}
+
+.btn-filtro:hover {
+    background-color: #c2d9ff;
+    transform: scale(1.02);
+}
+
+.modal-categoria {
+    margin-bottom: 28px;
+}
+
+.modal-categoria:last-child {
+    margin-bottom: 0;
+}
+
+.modal-categoria-titulo {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    margin-bottom: 14px;
+}
+
+.modal-medalhas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+}
+
+.medalha-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border: 1.5px solid rgba(74, 134, 192, 0.12);
+    border-radius: 14px;
+    padding: 16px 10px 12px;
+    gap: 8px;
+    transition: box-shadow 180ms ease, transform 160ms ease;
+}
+
+.medalha-card:not(.bloqueado):hover {
+    box-shadow: 0 4px 16px rgba(74, 134, 192, 0.16);
+    transform: translateY(-3px);
+}
+
+.medalha-card.bloqueado {
+    background: #f7f7f7;
+    border-color: rgba(0, 0, 0, 0.07);
+}
+
+.icone-wrapper {
+    position: relative;
+    display: inline-flex;
+}
+
+.medalha-icone {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.medalha-icone.conquistada {
+    background-color: var(--bg-tertiary-color);
+    color: var(--primary-blue);
+}
+
+.medalha-icone.bloqueada {
+    background-color: #e4e4e4;
+    color: #adadad;
+}
+
+.badge-estrela {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-blue);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    border: 2px solid #fff;
+}
+
+.medalha-nome {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    line-height: 1.3;
+    margin: 0;
+}
+
+.medalha-card.bloqueado .medalha-nome {
+    color: #b0b0b0;
+}
+
+.badge-status {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+.badge-status.conquistado {
+    background-color: #e6f4ec;
+    color: #2e7d52;
+}
+
+.badge-status.ativo {
+    background-color: var(--bg-tertiary-color);
+    color: var(--tertiary-blue);
+}
+
+.badge-status.concluido {
+    background-color: #d4edda;
+    color: #1e6b3a;
+}
+
+.badge-status.bloqueado {
+    background-color: #ebebeb;
+    color: #909090;
+}
+
+@media (max-width: 575px) {
+    .modal-medalhas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-medalhas-body {
+        padding: 16px;
+    }
+}
+
+.modal-dica {
+    border-radius: 16px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.modal-dica-body {
+    padding: 32px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.modal-dica-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--secondary-gray);
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 150ms, color 150ms;
+    z-index: 1;
+}
+
+.modal-dica-close:hover {
+    background-color: var(--bg-tertiary-color);
+    color: var(--primary-blue);
+}
+
+.modal-dica-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--secondary-gray);
+    margin-bottom: 16px;
+}
+
+.modal-dica-icone {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fff9e6, #fff3c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: #f5a623;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
+    animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
+    }
+
+    50% {
+        box-shadow: 0 4px 24px rgba(245, 166, 35, 0.45);
+    }
+}
+
+.modal-dica-titulo {
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--primary-gray);
+    margin-bottom: 18px;
+    text-align: left;
+    width: 100%;
+}
+
+.modal-dica-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.modal-dica-passo {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    text-align: left;
+}
+
+.passo-icone {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--bg-tertiary-color);
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.passo-check {
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 16px;
+    height: 16px;
+    background-color: #2e7d52;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    border: 2px solid #fff;
+}
+
+.passo-texto {
+    font-size: 0.85rem;
+    color: var(--secondary-gray);
+    line-height: 1.5;
+    margin: 0;
+    padding-top: 10px;
+}
+
+.modal-dica-exemplo {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.exemplo-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.exemplo-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-secondary-color);
+    border: 1px solid rgba(74, 134, 192, 0.15);
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+.exemplo-coin {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--primary-gray);
+}
+
+.exemplo-coin i {
+    color: #f5a623;
+    font-size: 1.1rem;
+}
+
+.exemplo-valor {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2e7d52;
+}
+
+.btn-agendar {
+    width: 100%;
+    background: var(--btn-primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.btn-agendar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 14px rgba(74, 134, 192, 0.35);
+}
+
+
+
+
 
 @keyframes fadeUp {
     from {
