@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jornada do Cuidado</title>
+    <title>Login - Jornada do Cuidado</title>
 
     <link
       rel="icon"
@@ -24,5 +24,70 @@
     <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
   </head>
-  <body></body>
+  <body>
+    <div
+      id="login-view"
+      class="d-flex align-items-center justify-content-center min-vh-100"
+    >
+      <div
+        class="card border-0 rounded-5 shadow p-3 bg-light my-3"
+        style="max-width: 450px; width: 100%"
+      >
+        <div class="text-center mb-2">
+          <div class="p-2 mb-0">
+            <img
+              src="./assets/images/mascote/care-médico.png"
+              alt="Care(mascore da Care Plus) vestido de médico"
+              width="150"
+              height="150"
+            />
+          </div>
+          <h1 class="h3 fw-bold font-headline text-primary">
+            Jornada do Cuidado
+          </h1>
+          <p class="text-muted">Cuide da sua saúde e ganhe recompensas.</p>
+        </div>
+
+        <form id="login-form" novalidate>
+          <div class="mb-3">
+            <label
+              class="form-label small fw-bold text-uppercase tracking-wider"
+              for="loginEmail"
+              >E-mail</label
+            >
+            <input
+              type="email"
+              class="form-control rounded-4 py-3"
+              placeholder="mariana@exemplo.com"
+              required
+              id="loginEmail"
+            />
+            <div class="invalid-feedback">
+              Por favor, digite um e-mail válido.
+            </div>
+          </div>
+          <div class="mb-4">
+            <label
+              class="form-label small fw-bold text-uppercase tracking-wider"
+              for="loginSenha"
+              >Senha</label
+            >
+            <input
+              type="password"
+              class="form-control rounded-4 py-3"
+              placeholder="••••••••"
+              required
+              id="loginSenha"
+            />
+            <div class="invalid-feedback">A senha é obrigatória.</div>
+          </div>
+          <button type="submit" class="btn btn-brand w-100 rounded-4 py-3">
+            Entrar
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script src="assets/js/login.js"></script>
+  </body>
 </html>

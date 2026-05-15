@@ -10,7 +10,7 @@
   --bg-light-color: #d6e8ff33;
 
   --primary-blue: #4a86c0;
-  --secondary-blue: #00bfff;
+  --secondary-blue: #659dd3;
   --tertiary-blue: #3a75ad;
 
   --primary-gray: #343d42;
@@ -30,7 +30,7 @@
   --bs-primary-rgb: 74, 134, 192;
 
   --bs-secondary: var(--secondary-blue);
-  --bs-secondary-rgb: 0, 191, 255;
+  --bs-secondary-rgb: 101, 157, 211;
 
   --bs-body-bg: var(--bg-primary-color);
   --bs-body-bg-rgb: 240, 244, 248;
