@@ -92,7 +92,7 @@ function loadLayout() {
                 </div>
                 <ul class="navbar-nav pe-3 gap-1">
                   <li class="nav-item menu-lateral-item">
-                    <a class="nav-link px-3 ${currentPage === 'index.html' ? 'active' : ''}" href="index.html">
+                    <a class="nav-link px-3 ${currentPage === 'home.html' ? 'active' : ''}" href="home.html">
                         <i class="fa-solid fa-table-cells-large"></i> Home
                     </a>
                   </li>
