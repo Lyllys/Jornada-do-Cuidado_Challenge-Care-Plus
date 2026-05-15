@@ -1,14 +1,8 @@
-.page-title {
-    font-size: 1.45rem;
-    /* font-weight: 80; */
-    color: var(--primary-gray);
-    margin-bottom: 2px;
-}
-
-.page-subtitle {
-    font-size: 0.875rem;
-    color: var(--secondary-gray);
-    margin-bottom: 0;
+img.mascote-sentado {
+    position: absolute;
+    width: 100px;
+    right: 30px;
+    top: -80px;
 }
 
 .card-niveis {
