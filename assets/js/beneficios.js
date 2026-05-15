@@ -116,11 +116,9 @@ function verificarBeneficiosDisponiveis() {
   });
 }
 
-// Rodada inicial (o resumo já existe no HTML). O navbar vem via layout.
 sincronizarTotaisCareCoins();
 verificarBeneficiosDisponiveis();
 
-// Quando o layout terminar de injetar o navbar/sidebar, sincroniza e revalida.
 document.addEventListener(
   'layout:carregado',
   () => {
