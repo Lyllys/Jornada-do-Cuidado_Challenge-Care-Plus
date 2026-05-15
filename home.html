@@ -29,7 +29,7 @@
       <div id="layout-sidebar"></div>
 
       <main class="app-main">
-<div class="container-fluid dashboard-content pt-0 pb-4">
+        <div class="container-fluid dashboard-content pt-0 pb-4">
           <div class="row g-4">
             <div class="col-12">
               <div class="dashboard-header mb-2">
@@ -182,7 +182,7 @@
               </div>
             </div>
 
-<div class="col-lg-4">
+            <div class="col-lg-4">
               <div
                 class="card dashboard-card shadow-sm border-0 h-100 overflow-hidden dashboard-card-blue-fill"
               >
@@ -194,9 +194,7 @@
 
                   <div class="row g-3">
                     <div class="col-6">
-                      <div
-                        class="dashboard-mini-card-white p-3 rounded-4"
-                      >
+                      <div class="dashboard-mini-card-white p-3 rounded-4">
                         <p class="text-primary small mb-2 fw-semibold">
                           Sessões
                         </p>
@@ -208,9 +206,7 @@
                     </div>
 
                     <div class="col-6">
-                      <div
-                        class="dashboard-mini-card-white p-3 rounded-4"
-                      >
+                      <div class="dashboard-mini-card-white p-3 rounded-4">
                         <p class="text-primary small mb-2 fw-semibold">
                           Metas atingidas
                         </p>
@@ -350,11 +346,17 @@
               Excelente, Mariana!
             </h5>
             <p class="mb-4 small" style="color: var(--text-secondary-color)">
-              O autocuidado é o primeiro passo para uma vida mais saudável. Nos vemos em breve!
+              O autocuidado é o primeiro passo para uma vida mais saudável. Nos
+              vemos em breve!
             </p>
 
-            <div class="card rounded-4 border p-3 mb-3 mx-auto" style="max-width: 320px; background-color: var(--white-color);">
-              <div class="d-flex align-items-center justify-content-center gap-3">
+            <div
+              class="card rounded-4 border p-3 mb-3 mx-auto"
+              style="max-width: 320px; background-color: var(--white-color)"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
                 <i class="fa-solid fa-trophy text-warning fs-3"></i>
                 <div class="text-center">
                   <p class="mb-0 fw-bold fs-4">+50</p>
@@ -363,8 +365,13 @@
               </div>
             </div>
 
-            <div class="card rounded-4 border p-3 mb-4 mx-auto" style="max-width: 320px; background-color: var(--white-color);">
-              <div class="d-flex align-items-center justify-content-center gap-3">
+            <div
+              class="card rounded-4 border p-3 mb-4 mx-auto"
+              style="max-width: 320px; background-color: var(--white-color)"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
                 <i class="fa-solid fa-cloud text-primary fs-3"></i>
                 <div class="text-center">
                   <p class="mb-0 fw-bold">Previsão para hoje</p>
@@ -415,8 +422,13 @@
               Cuidar da prevenção é garantir o seu futuro. Continue assim!
             </p>
 
-            <div class="card rounded-4 border p-3 mb-3 mx-auto" style="max-width: 320px; background-color: var(--white-color);">
-              <div class="d-flex align-items-center justify-content-center gap-3">
+            <div
+              class="card rounded-4 border p-3 mb-3 mx-auto"
+              style="max-width: 320px; background-color: var(--white-color)"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
                 <i class="fa-solid fa-trophy text-warning fs-3"></i>
                 <div class="text-center">
                   <p class="mb-0 fw-bold fs-4">+150</p>
@@ -425,12 +437,19 @@
               </div>
             </div>
 
-            <div class="card rounded-4 border p-3 mb-4 mx-auto" style="max-width: 320px; background-color: var(--white-color);">
-              <div class="d-flex align-items-center justify-content-center gap-3">
+            <div
+              class="card rounded-4 border p-3 mb-4 mx-auto"
+              style="max-width: 320px; background-color: var(--white-color)"
+            >
+              <div
+                class="d-flex align-items-center justify-content-center gap-3"
+              >
                 <i class="fa-solid fa-envelope text-primary fs-3"></i>
                 <div class="text-center">
                   <p class="mb-0 fw-bold">Confirmação em breve</p>
-                  <p class="small text-secondary mb-0">Em breve, você receberá a confirmação.</p>
+                  <p class="small text-secondary mb-0">
+                    Em breve, você receberá a confirmação.
+                  </p>
                 </div>
               </div>
             </div>
@@ -442,6 +461,54 @@
             >
               Seguir com a jornada
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de apresentação do Care -->
+    <div
+      class="modal fade"
+      id="modalDeApresentacao"
+      tabindex="-1"
+      aria-labelledby="modalDeApresentacaoLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 border-0">
+          <div class="modal-body pt-0 pb-4 text-center">
+            <div class="mb-0">
+              <img
+                id="mascoteAgendar"
+                src="assets/images/mascote/care-saudacoes.png"
+                alt="Care (mascote da Care Plus) acenando com a mão"
+                class="img-fluid mx-auto"
+                style="max-width: 200px"
+                width="200px"
+                height="200px"
+              />
+            </div>
+            <h2 class="fw-bold text-primary mb-2">
+              Olha só quem chegou! Que alegria te ver, Mariana!
+            </h2>
+            <p class="mb-2 text-secondary">
+              Eu sou o Care, o seu novo parceiro oficial de aventuras saudáveis!
+            </p>
+            <p class="mb-2">
+              Vou te ajudar a cuidar da sua saúde e, de quebra, garantir que
+              você ganhe <strong>Care Coins</strong> para trocar por mimos
+              incríveis.
+            </p>
+            <p class="mb-4">Juntos, vamos transformar rotina em recompensa!</p>
+
+            <button
+              type="button"
+              class="btn btn-brand px-5"
+              data-bs-dismiss="modal"
+            >
+              Bora começar?
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -451,5 +518,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/js/layout.js"></script>
+    <script src="assets/js/home.js"></script>
   </body>
 </html>

@@ -36,6 +36,8 @@ function init() {
         Entrando...
       `;
 
+      sessionStorage.setItem('showModalDeApresentacao', 'true');
+
       setTimeout(() => {
         window.location.href = 'home.html';
       }, 1200);
