@@ -93,7 +93,7 @@
   .beneficio-icone {
     transform: scale(1.1);
   }
-  transition: transform 0.3s ease-in-out;
+  transition: var(--card-transition);
 }
 
 .beneficio-icone-nutricionista {

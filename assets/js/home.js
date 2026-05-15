@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function exibirModalDeApresentacao() {
   const deveMostrar = sessionStorage.getItem('showModalDeApresentacao');
 
-  //if (deveMostrar === 'true') {
-  const modalElement = document.getElementById('modalDeApresentacao');
-  const modalDeApresentacao = new bootstrap.Modal(modalElement);
+  if (deveMostrar === 'true') {
+    const modalElement = document.getElementById('modalDeApresentacao');
+    const modalDeApresentacao = new bootstrap.Modal(modalElement);
 
-  setTimeout(() => {
-    modalDeApresentacao.show();
-    sessionStorage.removeItem('showModalDeApresentacao');
-  }, 500);
-  //
+    setTimeout(() => {
+      modalDeApresentacao.show();
+      sessionStorage.removeItem('showModalDeApresentacao');
+    }, 500);
+  }
 }

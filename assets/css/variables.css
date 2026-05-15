@@ -43,6 +43,8 @@
 
   --transform-hover: scale(1.05);
   --hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+
+  --card-transition: transform 0.3s ease-in-out;
 }
 
 .offcanvas {
