@@ -171,10 +171,10 @@
   padding: 2.25rem 2rem 2rem;
 }
 
-.beneficio-modal-resgate .modal-resgate-icon {
-  width: 76px;
-  height: 76px;
-  background-color: rgba(var(--bs-primary-rgb), 0.12);
+.modal-resgate-mascote {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
 }
 
 .modal-dica-icone {
