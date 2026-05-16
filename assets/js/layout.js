@@ -8,6 +8,11 @@ function loadLayout() {
 
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
+  if (sessionStorage.getItem('carePlusLoggedIn') !== 'true') {
+    window.location.replace('index.html');
+    return;
+  }
+
   const menuHTML = `
     <nav class="navbar bg-body-tertiary navbar-container">
         <div class="container-fluid">
@@ -73,8 +78,90 @@ function loadLayout() {
               </div>
 
               
-              <div>
-                <img src="./assets/images/profile-picture.png" class="img-thumbnail rounded-circle border-0" alt="Foto de perfil" width="60px" height="60px" />
+              <div class="dropdown profile-dropdown">
+                <button
+                  type="button"
+                  class="profile-avatar-btn"
+                  data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                  aria-expanded="false"
+                  aria-label="Abrir menu de perfil"
+                >
+                  <img
+                    src="./assets/images/profile-picture.png"
+                    class="profile-avatar-img"
+                    alt="Foto de perfil de Mariana"
+                  />
+                </button>
+                <div class="dropdown-menu dropdown-menu-end profile-menu p-0 shadow-lg mt-3">
+                  <div class="profile-menu-header">
+                    <img
+                      src="./assets/images/profile-picture.png"
+                      class="profile-menu-avatar"
+                      alt="Foto de perfil de Mariana"
+                    />
+                    <div class="profile-menu-user">
+                      <strong id="profileMenuName">Mariana</strong>
+                      <a href="beneficios.html">Meus benefícios</a>
+                    </div>
+                  </div>
+
+                  <div class="profile-menu-status">
+                    <div>
+                      <span>Nível atual</span>
+                      <strong>Ouro</strong>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="profile-menu-action"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalEditarPerfil"
+                  >
+                    <span class="profile-menu-action-icon">
+                      <i class="fa-solid fa-user-pen"></i>
+                    </span>
+                    <span>
+                      <strong>Editar perfil</strong>
+                      <small>Nome, e-mail e telefone</small>
+                    </span>
+                  </button>
+
+                  <button type="button" class="profile-menu-action">
+                    <span class="profile-menu-action-icon">
+                      <i class="fa-solid fa-medal"></i>
+                    </span>
+                    <span>
+                      <strong>Minhas medalhas</strong>
+                      <small>Conquistas recentes</small>
+                    </span>
+                  </button>
+
+                  <div class="profile-medals-card" aria-live="polite">
+                    <div class="profile-medals-card-header">
+                      <strong>Recebidas recentemente</strong>
+                      <span id="profileMedalsCount">0</span>
+                    </div>
+                    <div class="profile-medals-list" id="profileMedalsList">
+                      <p class="profile-medals-empty" id="profileMedalsEmpty">
+                        Suas próximas conquistas vão aparecer aqui.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="profile-menu-footer">
+                    <a
+                      href="#"
+                      class="profile-menu-link"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalConfiguracoes"
+                    >
+                      Configurações
+                    </a>
+                    <a href="index.html" class="profile-menu-link text-danger" data-logout-link>Sair</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -87,8 +174,8 @@ function loadLayout() {
             <div class="offcanvas-body d-flex flex-column justify-content-between">
               <div>
                 <div class="me-3 mb-3 rounded-4 bg-white p-2">
-                  <p class="ps-2 my-1 text-primary">Olá, Mariana!</p>
-                  <p class="ps-2 my-1 fw-semibold">Nível 3: Platinum</p>
+                  <p class="ps-2 my-1 text-primary" id="sidebarProfileGreeting">Olá, Mariana!</p>
+                  <p class="ps-2 my-1 fw-semibold">Nível Ouro</p>
                 </div>
                 <ul class="navbar-nav pe-3 gap-1">
                   <li class="nav-item menu-lateral-item">
@@ -111,10 +198,17 @@ function loadLayout() {
               <div class="border-top">
                 <ul class="navbar-nav pe-3 mt-2 gap-1">
                   <li class="nav-item menu-lateral-item">
-                    <a class="nav-link px-3" href="#"><i class="fa-solid fa-gear"></i> Configurações</a>
+                    <a
+                      class="nav-link px-3"
+                      href="#"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalConfiguracoes"
+                    >
+                      <i class="fa-solid fa-gear"></i> Configurações
+                    </a>
                   </li>
                   <li class="nav-item menu-lateral-item mb-2">
-                    <a class="nav-link px-3" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a>
+                    <a class="nav-link px-3" href="index.html" data-logout-link><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair</a>
                   </li>
                 </ul>
               </div>
@@ -203,6 +297,146 @@ function loadLayout() {
           </div>
         </div>
       </div>
+
+      <!-- Modal Editar Perfil -->
+      <div class="modal fade" id="modalEditarPerfil" tabindex="-1" aria-labelledby="modalEditarPerfilLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content border-0 shadow rounded-4">
+            <div class="modal-header border-0 px-4 pt-4 pb-0">
+              <div>
+                <h4 class="fw-bold text-primary mb-1" id="modalEditarPerfilLabel">
+                  Editar perfil
+                </h4>
+                <p class="text-secondary small mb-0">
+                  Atualize seus dados principais da conta.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <form class="modal-body p-4" id="formEditarPerfil">
+              <div class="profile-edit-cover">
+                <img
+                  src="./assets/images/profile-picture.png"
+                  class="profile-edit-avatar"
+                  alt="Foto de perfil de Mariana"
+                />
+                <button type="button" class="profile-edit-photo-btn">
+                  <i class="fa-solid fa-camera"></i>
+                  Alterar foto
+                </button>
+              </div>
+
+              <div class="row g-3 mt-2">
+                <div class="col-12">
+                  <label for="profileNameInput" class="form-label small fw-semibold text-secondary">
+                    Nome
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control rounded-3"
+                    id="profileNameInput"
+                    value="Mariana"
+                  />
+                </div>
+                <div class="col-12">
+                  <label for="profileEmailInput" class="form-label small fw-semibold text-secondary">
+                    E-mail
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control rounded-3"
+                    id="profileEmailInput"
+                    value="mariana@email.com"
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="profilePhoneInput" class="form-label small fw-semibold text-secondary">
+                    Telefone
+                  </label>
+                  <input
+                    type="tel"
+                    class="form-control rounded-3"
+                    id="profilePhoneInput"
+                    value="(11) 99999-9999"
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="profileBirthInput" class="form-label small fw-semibold text-secondary">
+                    Data de nascimento
+                  </label>
+                  <input
+                    type="date"
+                    class="form-control rounded-3"
+                    id="profileBirthInput"
+                    value="1995-05-10"
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-end gap-2 mt-4">
+                <button type="button" class="btn btn-light rounded-3 px-4" data-bs-dismiss="modal">
+                  Cancelar
+                </button>
+                <button type="submit" class="btn btn-brand px-4">
+                  Salvar alterações
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Configurações -->
+      <div class="modal fade" id="modalConfiguracoes" tabindex="-1" aria-labelledby="modalConfiguracoesLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content border-0 shadow rounded-4">
+            <div class="modal-header border-0 px-4 pt-4 pb-0">
+              <div>
+                <h4 class="fw-bold mb-1 settings-modal-title" id="modalConfiguracoesLabel">
+                  Configurações
+                </h4>
+                <p class="small mb-0 settings-modal-subtitle">
+                  Ajustes da sua conta Care Plus.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Fechar"
+              ></button>
+            </div>
+            <div class="modal-body p-4">
+              <div class="settings-card">
+                <div class="settings-option" aria-disabled="true">
+                  <span class="settings-option-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                  </span>
+                  <span class="settings-option-copy">
+                    <strong>Segurança</strong>
+                    <small>Senha, acesso e proteção da conta</small>
+                  </span>
+                </div>
+
+                <div class="settings-option" aria-disabled="true">
+                  <span class="settings-option-icon">
+                    <i class="fa-solid fa-bell"></i>
+                  </span>
+                  <span class="settings-option-copy">
+                    <strong>Gerenciar notificações</strong>
+                    <small>Preferências de recados, lembretes e avisos</small>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
   `;
 
   function onVisualizarNotificacoes() {
@@ -218,10 +452,129 @@ function loadLayout() {
     }
   }
 
+  function onEditarPerfil() {
+    const formEditarPerfil = document.getElementById('formEditarPerfil');
+    const profileNameInput = document.getElementById('profileNameInput');
+
+    if (!formEditarPerfil || !profileNameInput) {
+      return;
+    }
+
+    formEditarPerfil.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const nomeAtualizado = profileNameInput.value.trim() || 'Mariana';
+      const primeiroNome = nomeAtualizado.split(' ')[0];
+      const profileMenuName = document.getElementById('profileMenuName');
+      const homeGreeting = document.querySelector('.home-dashboard-greeting');
+      const sidebarProfileGreeting = document.getElementById(
+        'sidebarProfileGreeting',
+      );
+
+      if (profileMenuName) {
+        profileMenuName.textContent = nomeAtualizado;
+      }
+
+      if (homeGreeting) {
+        homeGreeting.textContent = `Olá, ${primeiroNome}!`;
+      }
+
+      if (sidebarProfileGreeting) {
+        sidebarProfileGreeting.textContent = `Olá, ${primeiroNome}!`;
+      }
+
+      const modalEditarPerfil = document.getElementById('modalEditarPerfil');
+      const modalInstance = bootstrap.Modal.getInstance(modalEditarPerfil);
+
+      if (modalInstance) {
+        modalInstance.hide();
+      }
+    });
+  }
+
+  function onMedalhasPerfil() {
+    const medalList = document.getElementById('profileMedalsList');
+    const medalCount = document.getElementById('profileMedalsCount');
+
+    if (!medalList || !medalCount) {
+      return;
+    }
+
+    let medalhas = [];
+
+    function renderizarMedalhas() {
+      medalCount.textContent = medalhas.length;
+
+      if (medalhas.length === 0) {
+        medalList.innerHTML = `
+          <p class="profile-medals-empty" id="profileMedalsEmpty">
+            Suas próximas conquistas vão aparecer aqui.
+          </p>
+        `;
+        return;
+      }
+
+      medalList.innerHTML = medalhas
+        .slice(0, 4)
+        .map(
+          (medalha) => `
+            <div class="profile-medal-item">
+              <span class="profile-medal-icon">
+                <i class="fa-solid ${medalha.icon}"></i>
+              </span>
+              <span class="profile-medal-copy">
+                <strong>${medalha.name}</strong>
+                <small>${medalha.description}</small>
+              </span>
+            </div>
+          `,
+        )
+        .join('');
+    }
+
+    function registrarMedalha(medalha) {
+      if (!medalha || !medalha.id) {
+        return;
+      }
+
+      medalhas = [
+        {
+          id: medalha.id,
+          name: medalha.name,
+          description: medalha.description,
+          icon: medalha.icon,
+        },
+        ...medalhas.filter((item) => item.id !== medalha.id),
+      ].slice(0, 4);
+
+      renderizarMedalhas();
+    }
+
+    window.registrarMedalhaPerfil = registrarMedalha;
+
+    document.addEventListener('careplus:medalha-conquistada', (event) => {
+      registrarMedalha(event.detail);
+    });
+
+    renderizarMedalhas();
+  }
+
+  function onLogout() {
+    document.querySelectorAll('[data-logout-link]').forEach((link) => {
+      link.addEventListener('click', () => {
+        sessionStorage.removeItem('carePlusLoggedIn');
+        sessionStorage.removeItem('showModalDeApresentacao');
+      });
+    });
+  }
+
   if (sidebarContainer) {
     sidebarContainer.innerHTML = menuHTML;
 
     onVisualizarNotificacoes();
+    onEditarPerfil();
+    onMedalhasPerfil();
+    onLogout();
 
     document.dispatchEvent(
       new CustomEvent('layout:carregado', {

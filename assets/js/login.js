@@ -36,6 +36,7 @@ function init() {
         Entrando...
       `;
 
+      sessionStorage.setItem('carePlusLoggedIn', 'true');
       sessionStorage.setItem('showModalDeApresentacao', 'true');
 
       setTimeout(() => {

@@ -3,313 +3,238 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Home — Care Plus</title>
 
-    <link
-      rel="icon"
-      type="image/png"
-      href="assets/images/icons/icon-logo.png"
-    />
-
+    <link rel="icon" type="image/png" href="assets/images/icon-logo.png" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     />
 
+    <!-- Seus estilos existentes -->
     <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
     <link rel="stylesheet" href="assets/css/home.css" />
   </head>
+
   <body>
     <div class="app-shell pt-2 mx-2">
+      <!-- Sidebar + Navbar -->
       <div id="layout-sidebar"></div>
 
       <main class="app-main">
-        <div class="container-fluid dashboard-content pt-1 pb-4">
-          <div class="row g-4">
-            <div class="col-12">
-              <div class="dashboard-header mb-2">
-                <div class="dashboard-header-left">
-                  <div class="dashboard-header-text">
-                    <h1 class="mb-1">Bem-vinda de volta, Mariana!</h1>
-                    <p class="text-secondary mb-0">
-                      Seu progresso de saúde está excelente hoje.
-                    </p>
-                  </div>
-
-                  <img
-                    src="assets/images/mascote/care-saudacoes.png"
-                    alt="Carezinho Saudações"
-                    class="img-fluid mascote-flutuante dashboard-header-mascote"
-                  />
-                </div>
-
-                <div class="dashboard-header-right">
-                  <div class="dashboard-chip px-3 py-2 rounded-4">
-                    <span class="d-block small text-uppercase text-secondary"
-                      >Sessões</span
-                    >
-                    <strong>12</strong>
-                  </div>
-
-                  <div class="dashboard-chip px-3 py-2 rounded-4">
-                    <span class="d-block small text-uppercase text-secondary"
-                      >Metas</span
-                    >
-                    <strong>85%</strong>
-                  </div>
-                </div>
+        <div class="container-fluid home-dashboard pt-1 pb-4">
+          <header class="home-dashboard-header">
+            <div class="home-dashboard-title-group">
+              <div class="home-dashboard-title-copy">
+                <span class="home-dashboard-greeting">Olá, Mariana!</span>
+                <h1>Bem-vinda de volta</h1>
+                <p>Seu progresso de saúde está excelente hoje</p>
               </div>
+              <img
+                src="assets/images/mascote/care-saudacoes.png"
+                alt="Care acenando"
+                class="home-dashboard-mascot"
+              />
             </div>
+          </header>
 
-            <div class="col-lg-4">
-              <div class="card dashboard-card shadow-sm border-0 h-100">
-                <div class="card-body p-4">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-4"
+          <div class="row home-dashboard-grid">
+            <!-- Saldo Atual -->
+            <div class="home-dashboard-cell">
+              <div class="card dashboard-card home-dashboard-card p-4">
+                <h6>Saldo atual</h6>
+                <h2 class="text-primary">
+                  <span id="homeCareCoins">2.450</span>
+                  <small class="fw-normal">Care Coins</small>
+                </h2>
+                <div class="home-progress-labels">
+                  <span>Nível atual</span>
+                  <span id="homeNextLevel"
+                    >Próximo: Platinum (550 Care Coins)</span
                   >
-                    <div>
-                      <h5 class="mb-2">Saldo atual</h5>
-                      <h1 class="display-5 mb-0">
-                        2.450
-                        <span class="fs-6 text-secondary">Care Coins</span>
-                      </h1>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <div
-                      class="d-flex justify-content-between mb-2 text-secondary small"
-                    >
-                      <span>Nível atual</span>
-                      <span>Próximo: Platinum (750 pts)</span>
-                    </div>
-                    <div class="progress rounded-pill" style="height: 12px">
-                      <div
-                        class="progress-bar bg-primary rounded-pill"
-                        role="progressbar"
-                        style="width: 55%"
-                        aria-valuenow="55"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-
-                  <div class="mt-4">
-                    <p class="mb-1 fw-semibold">Benefícios desbloqueados</p>
-                    <ul class="list-unstyled mb-0 text-secondary">
-                      <li class="d-flex align-items-center mb-2">
-                        <span class="me-2 text-primary"
-                          ><i class="fa-solid fa-check"></i
-                        ></span>
-                        Acesso a conteúdos exclusivos
-                      </li>
-                      <li class="d-flex align-items-center">
-                        <span class="me-2 text-primary"
-                          ><i class="fa-solid fa-check"></i
-                        ></span>
-                        Descontos em consultas
-                      </li>
-                    </ul>
-                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="card dashboard-card shadow-sm border-0 h-100">
-                <div class="card-body p-4">
+                <div class="progress my-2">
                   <div
-                    class="d-flex justify-content-between align-items-start mb-3"
-                  >
-                    <div>
-                      <h5 class="mb-2">Progresso e Benefícios</h5>
-                      <p class="text-secondary mb-0">
-                        Siga seus próximos passos para ganhar mais Coins e
-                        melhorar sua saúde.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="mb-4">
-                    <div class="d-flex justify-content-between mb-2">
-                      <span class="text-secondary small"
-                        >Progresso do seu plano</span
-                      >
-                      <span class="text-secondary small">45%</span>
-                    </div>
-                    <div class="progress rounded-pill" style="height: 12px">
-                      <div
-                        class="progress-bar bg-secondary rounded-pill"
-                        role="progressbar"
-                        style="width: 45%"
-                        aria-valuenow="45"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                  <div class="dashboard-step-item p-3 rounded-4 mb-3">
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div>
-                        <p class="mb-1 fw-semibold">Confirmar consulta</p>
-                        <small class="text-secondary">Hoje às 14:30</small>
-                      </div>
-                      <button id="btn-confirmar" class="btn btn-sm btn-brand">
-                        Ganhar Care Coins
-                      </button>
-                    </div>
-                  </div>
-                  <div class="dashboard-step-item p-3 rounded-4">
-                    <div
-                      class="d-flex justify-content-between align-items-center"
-                    >
-                      <div>
-                        <p class="mb-1 fw-semibold">Agendar check-up</p>
-                        <small class="text-secondary">Prevenção de saúde</small>
-                      </div>
-                      <button id="btn-agendar" class="btn btn-sm btn-brand">
-                        Ganhar Care Coins
-                      </button>
-                    </div>
-                  </div>
+                    class="progress-bar"
+                    id="homeLevelProgressBar"
+                    style="width: 0%"
+                  ></div>
                 </div>
+                <ul class="mt-2 mb-0">
+                  <li>✔ Benefícios desbloqueados</li>
+                  <li>✔ Acesso a conteúdos exclusivos</li>
+                  <li>✔ Descontos em consultas</li>
+                </ul>
               </div>
             </div>
 
-            <div class="col-lg-4">
+            <!-- Progresso e Benefícios -->
+            <div class="home-dashboard-cell">
               <div
-                class="card dashboard-card shadow-sm border-0 h-100 overflow-hidden dashboard-card-blue-fill"
+                class="card dashboard-card home-dashboard-card home-benefits-card p-4"
               >
-                <div class="card-body p-4 bg-primary text-white rounded-4">
-                  <div class="mb-4">
-                    <h5 class="mb-2 text-white">Sessões realizadas</h5>
-                    <h2 class="mb-1 text-white">3/4 Concluídas</h2>
+                <h6>Progresso e Benefícios</h6>
+                <small
+                  >Dê seus próximos passos para ganhar mais Care Coins e
+                  melhorar sua saúde!</small
+                >
+
+                <div class="home-benefits-actions mt-3">
+                  <div class="home-benefits-action" id="action-confirmar">
+                    <div>
+                      <strong>Confirmar consulta</strong>
+                      <small>Hoje às 14:30</small>
+                    </div>
+                    <button
+                      class="btn btn-brand"
+                      id="btn-confirmar"
+                      type="button"
+                    >
+                      Ganhar Care Coins
+                    </button>
                   </div>
-
-                  <div class="row g-3">
-                    <div class="col-6">
-                      <div class="dashboard-mini-card-white p-3 rounded-4">
-                        <p class="text-primary small mb-2 fw-semibold">
-                          Sessões
-                        </p>
-                        <p class="mb-1 small">3 de 4 concluídas</p>
-                        <p class="mb-0 small text-secondary">
-                          +150 Care Coins ganhos
-                        </p>
-                      </div>
+                  <div class="home-benefits-action" id="action-agendar">
+                    <div>
+                      <strong>Agendar check-up</strong>
+                      <small>Prevenção de saúde</small>
                     </div>
-
-                    <div class="col-6">
-                      <div class="dashboard-mini-card-white p-3 rounded-4">
-                        <p class="text-primary small mb-2 fw-semibold">
-                          Metas atingidas
-                        </p>
-                        <p class="mb-1 small">85% concluídas</p>
-                        <p class="mb-0 small text-secondary">
-                          Faltam 2 metas para bônus extra
-                        </p>
-                      </div>
-                    </div>
+                    <button
+                      class="btn btn-brand"
+                      id="btn-agendar"
+                      type="button"
+                    >
+                      Ganhar Care Coins
+                    </button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-8">
-              <div class="card dashboard-card shadow-sm border-0 h-100">
-                <div class="card-body p-4">
-                  <div
-                    class="d-flex justify-content-between align-items-start mb-3"
-                  >
-                    <div>
-                      <h5 class="mb-2">Próximos Passos</h5>
-                      <p class="text-secondary mb-0">
-                        Acompanhe suas ações do dia
-                      </p>
-                    </div>
-                    <a href="#" class="small text-primary">Ver todos</a>
+            <!-- Monitor de Hábitos -->
+            <div class="home-dashboard-cell">
+              <div class="card dashboard-card home-dashboard-card p-4">
+                <div class="home-habit-header">
+                  <h6>Monitor de Hábitos</h6>
+                  <span>Marque seu progresso aqui!</span>
+                </div>
+                <small>Baseado em seus últimos 7 dias</small>
+
+                <div class="habit-item home-habit-check-item mt-4">
+                  <div>
+                    <span>Leitura diária</span>
+                    <span id="readingProgressText">Progresso semanal: 5/7</span>
                   </div>
-                  <div class="row g-3">
-                    <div class="col-sm-6">
-                      <div class="dashboard-step-item p-3 rounded-4">
-                        <p class="mb-1 fw-semibold">Confirmar consulta</p>
-                        <small class="text-secondary">Hoje às 14:30</small>
-                      </div>
-                    </div>
-                    <div class="col-sm-6">
-                      <div class="dashboard-step-item p-3 rounded-4">
-                        <p class="mb-1 fw-semibold">Agendar check-up</p>
-                        <small class="text-secondary">Prevenção de saúde</small>
-                      </div>
-                    </div>
+                  <button
+                    class="home-habit-check-btn"
+                    id="readingCheckBtn"
+                    type="button"
+                    aria-label="Marcar leitura diária como concluída"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+                  <div class="progress mt-1 home-progress-full">
+                    <div
+                      class="progress-bar"
+                      id="readingProgressBar"
+                      style="width: 71%"
+                    ></div>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-lg-4">
-              <div class="card dashboard-card shadow-sm border-0 h-100">
-                <div class="card-body p-4">
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-4"
-                  >
-                    <div>
-                      <h5 class="mb-2">Monitor de Hábitos</h5>
-                      <p class="text-secondary mb-0">
-                        Baseado em seus últimos 7 dias
-                      </p>
-                    </div>
-                    <span class="badge bg-primary bg-opacity-10 text-primary"
-                      >72%</span
+                <div class="habit-item home-habit-check-item mt-4">
+                  <div>
+                    <span>Atividade Física</span>
+                    <span id="exerciseProgressText"
+                      >Progresso semanal: 4/7</span
                     >
                   </div>
-                  <div class="mb-4">
-                    <div class="d-flex justify-content-between mb-2">
-                      <span>Hidratação</span>
-                      <span class="text-secondary">8/12 copos</span>
-                    </div>
-                    <div class="progress rounded-pill" style="height: 10px">
-                      <div
-                        class="progress-bar bg-primary rounded-pill"
-                        role="progressbar"
-                        style="width: 67%"
-                        aria-valuenow="67"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                  <div class="mb-4">
-                    <div class="d-flex justify-content-between mb-2">
-                      <span>Passos</span>
-                      <span class="text-secondary">5.433 / 8.330</span>
-                    </div>
-                    <div class="progress rounded-pill" style="height: 10px">
-                      <div
-                        class="progress-bar bg-secondary rounded-pill"
-                        role="progressbar"
-                        style="width: 65%"
-                        aria-valuenow="65"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
-                    </div>
-                  </div>
-                  <div
-                    class="d-flex gap-2 align-items-start text-secondary small"
+                  <button
+                    class="home-habit-check-btn"
+                    id="exerciseCheckBtn"
+                    type="button"
+                    aria-label="Marcar atividade física como concluída"
                   >
-                    <i class="fa-solid fa-lightbulb fa-fw mt-1"></i>
+                    <i class="fa-solid fa-check"></i>
+                  </button>
+                  <div class="progress mt-1 home-progress-full">
+                    <div
+                      class="progress-bar"
+                      id="exerciseProgressBar"
+                      style="width: 57%"
+                    ></div>
+                  </div>
+                </div>
+
+                <small
+                  class="text-muted home-habit-tip mt-4 d-block"
+                  id="habitTip"
+                >
+                  💡 Mariana, o dia ainda está esperando por você! 📖🏃‍♀️ Bora ler
+                  e se mexer?
+                </small>
+              </div>
+            </div>
+
+            <!-- Consultas realizadas -->
+            <div class="home-dashboard-cell">
+              <div
+                class="card dashboard-card home-dashboard-card home-consultas-card p-4 text-center"
+              >
+                <div class="home-consultas-content">
+                  <p class="mb-0">Consultas realizadas sem atraso</p>
+                  <small class="home-consultas-subtitle">
+                    Acompanhe sua pontualidade nas consultas
+                  </small>
+                  <div
+                    class="progress-circle my-3 position-relative"
+                    style="width: 100px; height: 100px; margin: auto"
+                  >
+                    <img
+                      src="assets/images/mascote/care-apontando.png"
+                      alt="Care apontando para o progresso"
+                      class="home-consultas-care"
+                    />
+                    <svg viewBox="0 0 36 36">
+                      <path
+                        stroke="var(--bg-secondary-color)"
+                        stroke-width="3.5"
+                        fill="none"
+                        d="M18 2.0845
+                       a 15.9155 15.9155 0 0 1 0 31.831
+                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                      <path
+                        stroke="var(--primary-blue)"
+                        stroke-width="3.5"
+                        fill="none"
+                        stroke-dasharray="50 50"
+                        stroke-dashoffset="50"
+                        d="M18 2.0845
+                       a 15.9155 15.9155 0 0 1 0 31.831
+                       a 15.9155 15.9155 0 0 1 0 -31.831"
+                      />
+                    </svg>
                     <span
-                      >Mariana, caminhar mais 15 minutos hoje completará seu
-                      bônus de passos!</span
-                    >
+                      class="position-absolute top-50 start-50 translate-middle fw-bold fs-5"
+                      >2/4</span>
+                  </div>
+                  <div class="home-consultas-message">
+                    <span class="home-consultas-trophy" aria-hidden="true">
+                      <i class="fa-solid fa-trophy"></i>
+                    </span>
+                    <span class="home-consultas-message-copy">
+                      <span class="home-consultas-message-text">
+                        Continue assim!
+                      </span>
+                      <small class="home-consultas-hint">
+                        Cuidar da sua saúde gera as melhores recompensas.
+                      </small>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -347,10 +272,8 @@
               Excelente, Mariana!
             </h5>
             <p class="mb-4 small" style="color: var(--text-secondary-color)">
-              O autocuidado é o primeiro passo para uma vida mais saudável. Nos
-              vemos em breve!
+              Combinado! Marquei aqui no meu coração.
             </p>
-
             <div
               class="card rounded-4 border p-3 mb-3 mx-auto"
               style="max-width: 320px; background-color: var(--white-color)"
@@ -365,7 +288,6 @@
                 </div>
               </div>
             </div>
-
             <div
               class="card rounded-4 border p-3 mb-4 mx-auto"
               style="max-width: 320px; background-color: var(--white-color)"
@@ -373,14 +295,23 @@
               <div
                 class="d-flex align-items-center justify-content-center gap-3"
               >
-                <i class="fa-solid fa-cloud text-primary fs-3"></i>
+                <div class="home-modal-medal-icon" aria-hidden="true">
+                  <div class="home-modal-medal-circle">
+                    <i class="fa-solid fa-calendar-check"></i>
+                  </div>
+                  <span class="home-modal-medal-star">
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                </div>
                 <div class="text-center">
-                  <p class="mb-0 fw-bold">Previsão para hoje</p>
-                  <p class="small text-secondary mb-0">13ºC • Céu limpo</p>
+                  <p class="mb-0 fw-bold">Agenda Organizada</p>
+                  <p class="small text-secondary mb-0">
+                    Parabéns! Você conquistou uma medalha<br />
+                    Seu dia está no ritmo certo
+                  </p>
                 </div>
               </div>
             </div>
-
             <button
               type="button"
               class="btn btn-brand w-100"
@@ -422,7 +353,6 @@
             <p class="mb-4 small" style="color: var(--text-secondary-color)">
               Cuidar da prevenção é garantir o seu futuro. Continue assim!
             </p>
-
             <div
               class="card rounded-4 border p-3 mb-3 mx-auto"
               style="max-width: 320px; background-color: var(--white-color)"
@@ -437,7 +367,6 @@
                 </div>
               </div>
             </div>
-
             <div
               class="card rounded-4 border p-3 mb-4 mx-auto"
               style="max-width: 320px; background-color: var(--white-color)"
@@ -445,16 +374,23 @@
               <div
                 class="d-flex align-items-center justify-content-center gap-3"
               >
-                <i class="fa-solid fa-envelope text-primary fs-3"></i>
+                <div class="home-modal-medal-icon" aria-hidden="true">
+                  <div class="home-modal-medal-circle">
+                    <i class="fa-solid fa-shield-heart"></i>
+                  </div>
+                  <span class="home-modal-medal-star">
+                    <i class="fa-solid fa-star"></i>
+                  </span>
+                </div>
                 <div class="text-center">
-                  <p class="mb-0 fw-bold">Confirmação em breve</p>
+                  <p class="mb-0 fw-bold">Mestre da Prevenção</p>
                   <p class="small text-secondary mb-0">
-                    Em breve, você receberá a confirmação.
+                    Mandou bem! Você arrasou no auto-cuidado e ganhou uma
+                    medalha
                   </p>
                 </div>
               </div>
             </div>
-
             <button
               type="button"
               class="btn btn-brand w-100"
@@ -480,7 +416,6 @@
           <div class="modal-body py-4 text-center">
             <div class="mb-0 modal-apresentacao-container">
               <img
-                id="mascoteAgendar"
                 src="assets/images/mascote/care-saudacoes.png"
                 alt="Care (mascote da Care Plus) acenando com a mão"
                 class="img-fluid mascote-img"
@@ -500,7 +435,6 @@
             <p class="mb-4 modal-apresentacao-texto">
               Juntos, vamos transformar rotina em recompensa!
             </p>
-
             <button
               type="button"
               class="btn btn-brand px-5 modal-apresentacao-btn"
@@ -513,10 +447,7 @@
       </div>
     </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/layout.js"></script>
     <script src="assets/js/home.js"></script>
   </body>
