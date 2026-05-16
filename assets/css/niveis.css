@@ -320,29 +320,6 @@ img.mascote-sentado {
     margin: 0;
 }
 
-.btn-medalhas {
-    width: 100%;
-    background-color: var(--bg-tertiary-color);
-    color: var(--primary-blue);
-    border: none;
-    border-radius: 8px;
-    padding: 9px 14px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-    transition: background-color 160ms ease, transform 140ms ease;
-}
-
-.btn-medalhas:hover {
-    background-color: #c2d9ff;
-    transform: scale(1.02);
-}
-
 .dica-card {
     background: linear-gradient(135deg, var(--tertiary-blue) 0%, var(--primary-blue) 100%);
     border-radius: 12px;
@@ -592,215 +569,55 @@ img.mascote-sentado {
     }
 }
 
-.modal-dica {
-    border-radius: 16px;
-    border: none;
-    overflow: hidden;
-    position: relative;
-}
-
-.modal-dica-body {
-    padding: 32px 28px 24px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.modal-dica-close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    background: none;
-    border: none;
-    font-size: 1.1rem;
-    color: var(--secondary-gray);
-    cursor: pointer;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 150ms, color 150ms;
-    z-index: 1;
-}
-
-.modal-dica-close:hover {
-    background-color: var(--bg-tertiary-color);
-    color: var(--primary-blue);
-}
-
-.modal-dica-label {
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--secondary-gray);
-    margin-bottom: 16px;
-}
-
 .modal-dica-icone {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #fff9e6, #fff3c4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: #f5a623;
-    margin-bottom: 18px;
-    box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
-    animation: pulseGlow 2.5s ease-in-out infinite;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #fff9e6, #fff3c4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #f5a623;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
+  animation: pulseGlow 2.5s ease-in-out infinite;
 }
 
 @keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
+  }
 
-    0%,
-    100% {
-        box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
-    }
-
-    50% {
-        box-shadow: 0 4px 24px rgba(245, 166, 35, 0.45);
-    }
-}
-
-.modal-dica-titulo {
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: var(--primary-gray);
-    margin-bottom: 18px;
-    text-align: left;
-    width: 100%;
-}
-
-.modal-dica-lista {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 20px 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.modal-dica-passo {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    text-align: left;
+  50% {
+    box-shadow: 0 4px 24px rgba(245, 166, 35, 0.45);
+  }
 }
 
 .passo-icone {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background-color: var(--bg-tertiary-color);
-    color: var(--primary-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-    position: relative;
-}
-
-.passo-check {
-    position: absolute;
-    bottom: -4px;
-    right: -4px;
-    width: 16px;
-    height: 16px;
-    background-color: #2e7d52;
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.55rem;
-    border: 2px solid #fff;
-}
-
-.passo-texto {
-    font-size: 0.85rem;
-    color: var(--secondary-gray);
-    line-height: 1.5;
-    margin: 0;
-    padding-top: 10px;
-}
-
-.modal-dica-exemplo {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.exemplo-label {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--primary-gray);
-    text-align: left;
-    margin-bottom: 8px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background-color: var(--bg-tertiary-color);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .exemplo-badge {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--bg-secondary-color);
-    border: 1px solid rgba(74, 134, 192, 0.15);
-    border-radius: 10px;
-    padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-secondary-color);
+  border: 1px dashed rgba(74, 134, 192, 0.15);
+  border-radius: 10px;
+  padding: 10px 14px;
 }
-
-.exemplo-coin {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: var(--primary-gray);
-}
-
-.exemplo-coin i {
-    color: #f5a623;
-    font-size: 1.1rem;
-}
-
-.exemplo-valor {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #2e7d52;
-}
-
-.btn-agendar {
-    width: 100%;
-    background: var(--btn-primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: 14px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    transition: transform 140ms ease, box-shadow 140ms ease;
-}
-
-.btn-agendar:hover {
-    transform: scale(1.02);
-    box-shadow: 0 4px 14px rgba(74, 134, 192, 0.35);
-}
-
-
-
-
 
 @keyframes fadeUp {
     from {

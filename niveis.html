@@ -393,52 +393,79 @@
 
     <div class="modal fade" id="modalDica" tabindex="-1" aria-labelledby="modalDicaLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content modal-dica">
-                <button type="button" class="modal-dica-close" data-bs-dismiss="modal" aria-label="Fechar">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-                <div class="modal-dica-body">
-                    <p class="modal-dica-label" id="modalDicaLabel">DICA DETALHADA</p>
+            <div class="modal-content border-0 shadow rounded-4">
+                <div class="modal-body pt-0 pb-4 text-center">
+                    <button
+                    type="button"
+                    class="btn-close position-absolute top-0 end-0 m-3"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar"
+                    ></button>
+                    <div class="d-flex flex-column align-items-center gap-3 px-4 py-4">
                     <div class="modal-dica-icone">
                         <i class="fa-solid fa-lightbulb"></i>
                     </div>
-                    <p class="modal-dica-titulo">Para subir de nível mais rápido:</p>
-                    <ul class="modal-dica-lista">
-                        <li class="modal-dica-passo">
-                            <div class="passo-icone">
-                                <i class="fa-solid fa-calendar-check"></i>
-                                <span class="passo-check"><i class="fa-solid fa-check"></i></span>
-                            </div>
-                            <p class="passo-texto">Agende e conclua suas consultas preventivas anuais.</p>
+                    <p class="fs-6 fw-bold mb-1">Para subir de nível mais rápido</p>
+                    <ul
+                        class="p-0 d-flex flex-column gap-3 list-unstyled text-start text-body-secondary small"
+                    >
+                        <li class="d-flex align-items-start gap-3">
+                        <div class="passo-icone">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+                        <p class="my-auto">
+                            <span class="fw-bold">Check-up Preventivo: </span>Agende e
+                            conclua suas consultas preventivas anuais.
+                        </p>
                         </li>
-                        <li class="modal-dica-passo">
-                            <div class="passo-icone">
-                                <i class="fa-solid fa-syringe"></i>
-                            </div>
-                            <p class="passo-texto">Mantenha seu histórico de vacinação em dia.</p>
+                        <li class="d-flex align-items-start gap-3">
+                        <div class="passo-icone">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                        <p class="my-auto">
+                            <span class="fw-bold">Confirmação de Presença: </span
+                            >Confirme suas consultas no app.
+                        </p>
                         </li>
-                        <li class="modal-dica-passo">
-                            <div class="passo-icone">
-                                <i class="fa-solid fa-laptop-medical"></i>
-                            </div>
-                            <p class="passo-texto">Utilize os novos serviços de telemedicina para dúvidas rápidas.
-                                Cada ação soma Care Coins!</p>
+                        <li class="d-flex align-items-start gap-3">
+                        <div class="passo-icone">
+                            <i class="fa-solid fa-flask-vial"></i>
+                        </div>
+                        <p class="my-auto">
+                            <span class="fw-bold"> Exames Solicitados: </span>Realize os
+                            exames pedidos nas consultas.
+                        </p>
+                        </li>
+                        <li class="d-flex align-items-start gap-3">
+                        <div class="passo-icone">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <p class="my-auto">
+                            <span class="fw-bold"> Consultas de Retorno: </span>Não
+                            falte aos retornos.
+                        </p>
                         </li>
                     </ul>
-                    <div class="modal-dica-exemplo">
-                        <p class="exemplo-label">Exemplo de Ganho de Care Coins:</p>
+                    <div class="w-100">
+                        <p class="small fw-semibold text-start mb-2">
+                        Exemplo de Ganho de Care Coins:
+                        </p>
                         <div class="exemplo-badge">
-                            <div class="exemplo-coin">
-                                <i class="fa-solid fa-coins"></i>
-                                <span>Care Coins</span>
-                            </div>
-                            <span class="exemplo-valor">+50 por Check-up</span>
+                        <div
+                            class="exemplo-coin d-flex align-items-center gap-2 fw-semibold small"
+                        >
+                            <img
+                            src="./assets/images/icons/icon-care-coin.svg"
+                            alt="Care Coin"
+                            />
+                            <span>Care Coins</span>
+                        </div>
+                        <span class="exemplo-valor small fw-semibold text-success"
+                            >+50 por Check-up</span
+                        >
                         </div>
                     </div>
-                    <button class="btn-agendar" type="button">
-                        AGENDAR MINHA CONSULTA AGORA
-                        <i class="fa-solid fa-arrow-right ms-2"></i>
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>

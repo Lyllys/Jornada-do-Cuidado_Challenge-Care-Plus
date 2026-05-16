@@ -116,6 +116,21 @@ function verificarBeneficiosDisponiveis() {
   });
 }
 
+function configurarModalSaibaMais() {
+  const modalElement = document.getElementById('modalSaibaMaisCareCoins');
+  if (!modalElement) return;
+
+  if (typeof bootstrap === 'undefined' || !bootstrap.Modal) return;
+
+  const modalSaibaMais = bootstrap.Modal.getOrCreateInstance(modalElement);
+
+  const btnSaibaMais = document.getElementById('btnSaibaMaisCareCoins');
+
+  btnSaibaMais.addEventListener('click', (event) => {
+    modalSaibaMais.show();
+  });
+}
+
 sincronizarTotaisCareCoins();
 verificarBeneficiosDisponiveis();
 
@@ -129,3 +144,4 @@ document.addEventListener(
 );
 
 configurarModalResgate();
+configurarModalSaibaMais();
