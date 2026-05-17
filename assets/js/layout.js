@@ -168,7 +168,8 @@ function loadLayout() {
 
           <div class="offcanvas offcanvas-start offcanvas-container pt-4" tabindex="-1" id="offcanvasScrolling">
             <div class="offcanvas-header">
-              <img src="./assets/images/care-plus-logo.png" alt="Logo da Care Plus" width="150px" height="40px" class="ms-3" />
+              <a href="home.html"> <img src="./assets/images/care-plus-logo.png" alt="Logo da Care Plus" width="150px" height="40px" class="ms-3"/>
+              </a>
               <button type="button" class="btn-close d-lg-none" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body d-flex flex-column justify-content-between">
