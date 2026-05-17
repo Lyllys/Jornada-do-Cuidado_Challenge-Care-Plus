@@ -128,7 +128,7 @@ function loadLayout() {
                     </span>
                   </button>
 
-                  <button type="button" class="profile-menu-action">
+                  <a href="niveis.html?modal=medalhas" class="profile-menu-action" style="text-decoration:none;color:inherit; white-space:nowrap;">
                     <span class="profile-menu-action-icon">
                       <i class="fa-solid fa-medal"></i>
                     </span>
@@ -136,7 +136,7 @@ function loadLayout() {
                       <strong>Minhas medalhas</strong>
                       <small>Conquistas recentes</small>
                     </span>
-                  </button>
+                  </a>
 
                   <div class="profile-medals-card" aria-live="polite">
                     <div class="profile-medals-card-header">

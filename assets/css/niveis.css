@@ -3,6 +3,7 @@ img.mascote-sentado {
     width: 100px;
     right: 30px;
     top: -80px;
+    animation: float 3s ease-in-out infinite;
 }
 
 .card-niveis {
@@ -27,6 +28,7 @@ img.mascote-sentado {
 }
 
 .card-niveis-header h2 {
+    font-family: "Nunito", sans-serif;
     font-size: 1.15rem;
     font-weight: 700;
     color: var(--primary-gray);
@@ -100,12 +102,13 @@ img.mascote-sentado {
     box-shadow: 0 0 0 4px rgba(74, 134, 192, 0.2);
 }
 
-.timeline-icon.concluido.bronze{
+.timeline-icon.concluido.bronze {
     background-color: #cd7f32;
     color: #fff;
     box-shadow: 0 0 0 3px rgba(205, 127, 50, 0.2);
 }
-.timeline-icon.concluido.prata{
+
+.timeline-icon.concluido.prata {
     background-color: #a0a0b2;
     color: #fff;
     box-shadow: 0 0 0 3px rgba(50, 91, 205, 0.2);
@@ -223,7 +226,7 @@ img.mascote-sentado {
     height: 100%;
     border-radius: 50px;
     background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue));
-    transition: width 600ms ease;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .barra-labels {
@@ -390,48 +393,55 @@ img.mascote-sentado {
 .modal-medalhas-header {
     background-color: #fff;
     border-bottom: 1px solid rgba(74, 134, 192, 0.1);
-    padding: 20px 24px;
-    align-items: flex-start;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+}
+
+img.mascote-medalhas {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    flex-shrink: 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+.modal-medalhas-textos {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.modal-medalhas-header .btn-close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
 }
 
 .modal-medalhas-header .modal-title {
+    font-family: 'Nunito', sans-serif;
     font-size: 1.4rem;
-    font-weight: 800;
+    font-weight: 600;
     color: var(--primary-gray);
-    margin-bottom: 2px;
+    margin-bottom: 0px;
+    line-height: 1.2;
 }
 
 .modal-medalhas-header .modal-subtitle {
     font-size: 0.82rem;
     color: var(--secondary-gray);
-    margin: 0;
+    margin-top: 2px;
+    margin-bottom: 0;
+    line-height: 1.2;
 }
 
 .modal-medalhas-body {
     background-color: var(--bg-primary-color);
     padding: 24px;
-}
-
-.btn-filtro {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background-color: var(--bg-tertiary-color);
-    color: var(--primary-blue);
-    border: none;
-    border-radius: 50px;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.82rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 160ms ease, transform 140ms ease;
-    white-space: nowrap;
-}
-
-.btn-filtro:hover {
-    background-color: #c2d9ff;
-    transform: scale(1.02);
+    overflow-y: auto;
+    min-height: 70vh;
 }
 
 .modal-categoria {
@@ -447,11 +457,13 @@ img.mascote-sentado {
     font-weight: 700;
     color: var(--primary-gray);
     margin-bottom: 14px;
+    padding-left: 16px;
 }
 
 .modal-medalhas-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 12px;
 }
 
@@ -465,7 +477,14 @@ img.mascote-sentado {
     border-radius: 14px;
     padding: 16px 10px 12px;
     gap: 8px;
+    width: 130px;
+    flex-shrink: 0;
     transition: box-shadow 180ms ease, transform 160ms ease;
+}
+
+.modal-categoria--niveis .modal-medalhas-grid {
+    justify-content: flex-start;
+    padding-left: 18px;
 }
 
 .medalha-card:not(.bloqueado):hover {
@@ -537,6 +556,7 @@ img.mascote-sentado {
     font-weight: 700;
     padding: 3px 10px;
     border-radius: 50px;
+    margin-top: auto;
 }
 
 .badge-status.conquistado {
@@ -559,64 +579,47 @@ img.mascote-sentado {
     color: #909090;
 }
 
-@media (max-width: 575px) {
-    .modal-medalhas-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .modal-medalhas-body {
-        padding: 16px;
-    }
-}
-
-.modal-dica-icone {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #fff9e6, #fff3c4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: #f5a623;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
-  animation: pulseGlow 2.5s ease-in-out infinite;
-}
-
-@keyframes pulseGlow {
-  0%,
-  100% {
-    box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
-  }
-
-  50% {
-    box-shadow: 0 4px 24px rgba(245, 166, 35, 0.45);
-  }
+.mascote-ideia{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    animation: pulseGlow 2.5s ease-in-out infinite;
 }
 
 .passo-icone {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background-color: var(--bg-tertiary-color);
-  color: var(--primary-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  flex-shrink: 0;
-  position: relative;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background-color: var(--bg-tertiary-color);
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    position: relative;
 }
 
 .exemplo-badge {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--bg-secondary-color);
-  border: 1px dashed rgba(74, 134, 192, 0.15);
-  border-radius: 10px;
-  padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-secondary-color);
+    border: 1px dashed rgba(74, 134, 192, 0.15);
+    border-radius: 10px;
+    padding: 10px 14px;
+}
+
+@keyframes pulseGlow {
+
+    0%,
+    100% {
+        filter:drop-shadow(0 0 6px rgba(74, 134, 192, 0.3));
+    }
+
+    50% {
+        filter:drop-shadow(0 0 18px rgba(74, 134, 192, 0.7));
+    }
 }
 
 @keyframes fadeUp {
@@ -646,6 +649,22 @@ img.mascote-sentado {
 
 .animate-in[data-delay="3"] {
     animation-delay: 240ms;
+}
+
+@keyframes float {
+    0%   { transform: translateX(0) rotate(0deg);}
+    50%  { transform: translateX(8px) rotate(2deg); }
+    100% { transform: translateX(0) rotate(0deg);}
+}
+
+@media (max-width: 575px) {
+    .modal-medalhas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-medalhas-body {
+        padding: 16px;
+    }
 }
 
 @media (max-width: 767px) {

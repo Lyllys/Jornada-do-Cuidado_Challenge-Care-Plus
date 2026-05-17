@@ -59,11 +59,15 @@ function configurarBarraProgresso() {
 
     const progresso = barra.dataset.progresso || barra.style.width;
 
+    barra.style.transition = 'none';
     barra.style.width = '0%';
 
-    setTimeout(() => {
-        barra.style.width = progresso;
-    }, 300);
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            barra.style.transition = 'width 1.2s cubic-bezier(0.4, 0, 0.2, 1)';
+            barra.style.width = progresso;
+        });
+    });
 }
 
 function inicializar() {
@@ -74,6 +78,21 @@ function inicializar() {
 function inicializarAposLayout() {
     configurarModalMedalhas();
     configurarModalDica();
+    abrirModalPorURL();
+}
+
+function abrirModalPorURL() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('modal') !== 'medalhas') return;
+
+    const modalElement = document.getElementById('modalMedalhas');
+    if (!modalElement) return;
+    if (typeof bootstrap === 'undefined' || !bootstrap.Modal) return;
+
+    const modal = bootstrap.Modal.getOrCreateInstance(modalElement);
+    modal.show();
+
+    history.replaceState(null, '', window.location.pathname);
 }
 
 document.addEventListener('DOMContentLoaded', inicializar);
@@ -81,5 +100,5 @@ document.addEventListener('DOMContentLoaded', inicializar);
 document.addEventListener(
     'layout:carregado',
     inicializarAposLayout,
-    { once: true }, 
+    { once: true },
 );

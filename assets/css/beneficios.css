@@ -177,19 +177,11 @@
   object-fit: contain;
 }
 
-.modal-dica-icone {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #fff9e6, #fff3c4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  color: #f5a623;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
-  animation: pulseGlow 2.5s ease-in-out infinite;
+.mascote-ideia{
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    animation: pulseGlow 2.5s ease-in-out infinite;
 }
 
 .passo-icone {
@@ -228,12 +220,13 @@
 }
 
 @keyframes pulseGlow {
-  0%,
-  100% {
-    box-shadow: 0 4px 16px rgba(245, 166, 35, 0.2);
-  }
 
-  50% {
-    box-shadow: 0 4px 24px rgba(245, 166, 35, 0.45);
-  }
+    0%,
+    100% {
+        filter:drop-shadow(0 0 6px rgba(74, 134, 192, 0.3));
+    }
+
+    50% {
+        filter:drop-shadow(0 0 18px rgba(74, 134, 192, 0.7));
+    }
 }
