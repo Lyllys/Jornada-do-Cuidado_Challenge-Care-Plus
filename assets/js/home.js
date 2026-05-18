@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
       icon: 'fa-book-open',
       image: 'assets/images/mascote/care-leitor.png',
       imageAlt: 'Care lendo um livro',
-      toastTitle: '📚 Mandou bem, Mariana! Você completou sua leitura do dia!',
+      toastTitle: 'Mandou bem, Mariana! Você completou sua leitura do dia!',
       medal: 'Leitor Assíduo',
     },
     exercise: {
@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (habitState.reading.done && !habitState.exercise.done) {
       habitTip.textContent =
-        'Ei, Mariana! Seus músculos estão esperando! 🏃‍♀️ Vamos se mexer e ganhar uma medalha hoje?';
+        'Ei, Mariana! Seus músculos estão esperando! Vamos se mexer e ganhar uma medalha hoje?';
       return;
     }
 
@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     habitTip.textContent =
-      '💡 Mariana, o dia ainda está esperando por você! 📖🏃‍♀️ Bora ler e se mexer?';
+      '💡 Mariana, o dia ainda está esperando por você! Bora ler e se mexer?';
   }
 
   function concluirHabito(tipo) {
