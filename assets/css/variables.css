@@ -22,6 +22,7 @@
   --text-secondary-color: var(--primary-gray);
   --text-placeholder-color: var(--secondary-gray);
   --text-link-color: var(--secondary-blue);
+  --text-link-color-bg-dark: #d6e8ff;
 
   --bs-border-radius: 1rem;
 
