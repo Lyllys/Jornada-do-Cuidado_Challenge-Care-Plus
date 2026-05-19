@@ -2,6 +2,19 @@ document.addEventListener('DOMContentLoaded', function () {
   exibirModalDeApresentacao();
   const btnConfirmar = document.getElementById('btn-confirmar');
   const btnAgendar = document.getElementById('btn-agendar');
+  const calendarActionButtons = document.querySelectorAll(
+    '[data-calendar-action]',
+  );
+  const modalAdicionarAgenda = document.getElementById('modalAdicionarAgenda');
+  const calendarEventTitle = document.getElementById('calendarEventTitle');
+  const calendarEventDate = document.getElementById('calendarEventDate');
+  const calendarEventTime = document.getElementById('calendarEventTime');
+  const calendarSuccessMessage = document.getElementById(
+    'calendarSuccessMessage',
+  );
+  const btnConfirmarAgenda = document.getElementById('btnConfirmarAgenda');
+  const btnCancelarAgenda = document.getElementById('btnCancelarAgenda');
+  let calendarSuccessTimeout;
   let saldoCareCoins = 2450;
   let careCoinsParaPlatinum = 550;
 
@@ -71,6 +84,66 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  function resetarModalAgenda() {
+    window.clearTimeout(calendarSuccessTimeout);
+
+    if (calendarSuccessMessage) {
+      calendarSuccessMessage.classList.add('d-none');
+    }
+
+    if (btnConfirmarAgenda) {
+      btnConfirmarAgenda.disabled = false;
+      btnConfirmarAgenda.textContent = 'Confirmar';
+    }
+
+    if (btnCancelarAgenda) {
+      btnCancelarAgenda.disabled = false;
+    }
+  }
+
+  function abrirModalAgenda({ title, date, time }) {
+    if (!modalAdicionarAgenda) {
+      return;
+    }
+
+    resetarModalAgenda();
+
+    if (calendarEventTitle) {
+      calendarEventTitle.textContent = title;
+    }
+
+    if (calendarEventDate) {
+      calendarEventDate.textContent = date;
+    }
+
+    if (calendarEventTime) {
+      calendarEventTime.textContent = time;
+    }
+
+    bootstrap.Modal.getOrCreateInstance(modalAdicionarAgenda).show();
+  }
+
+  function confirmarAgenda() {
+    if (!modalAdicionarAgenda || !calendarSuccessMessage) {
+      return;
+    }
+
+    calendarSuccessMessage.classList.remove('d-none');
+
+    if (btnConfirmarAgenda) {
+      btnConfirmarAgenda.disabled = true;
+      btnConfirmarAgenda.textContent = 'Adicionado';
+    }
+
+    if (btnCancelarAgenda) {
+      btnCancelarAgenda.disabled = true;
+    }
+
+    calendarSuccessTimeout = window.setTimeout(() => {
+      bootstrap.Modal.getOrCreateInstance(modalAdicionarAgenda).hide();
+    }, 1800);
+  }
+
   function registrarMedalhaConquistada(medalha) {
     document.dispatchEvent(
       new CustomEvent('careplus:medalha-conquistada', {
@@ -81,6 +154,24 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.registrarMedalhaPerfil) {
       window.registrarMedalhaPerfil(medalha);
     }
+  }
+
+  calendarActionButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      abrirModalAgenda({
+        title: button.dataset.calendarTitle || 'Consulta Care Plus',
+        date: button.dataset.calendarDate || 'Data a confirmar',
+        time: button.dataset.calendarTime || 'Horário a confirmar',
+      });
+    });
+  });
+
+  if (btnConfirmarAgenda) {
+    btnConfirmarAgenda.addEventListener('click', confirmarAgenda);
+  }
+
+  if (modalAdicionarAgenda) {
+    modalAdicionarAgenda.addEventListener('hidden.bs.modal', resetarModalAgenda);
   }
 
   if (btnConfirmar) {
