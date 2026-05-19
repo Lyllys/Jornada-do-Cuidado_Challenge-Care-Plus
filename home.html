@@ -61,9 +61,8 @@
           <!-- Progresso e Benefícios -->
           <div class="home-dashboard-cell">
             <div class="card dashboard-card home-dashboard-card home-benefits-card p-4">
-              <h6>Progresso e Benefícios</h6>
-              <small>Dê seus próximos passos para ganhar mais Care Coins e
-                melhorar sua saúde!</small>
+              <h6>Agenda e Benefícios</h6>
+              <small>Confirme consultas, adicione lembretes à agenda e ganhe Care Coins.</small>
 
               <div class="home-benefits-actions mt-3">
                 <div class="home-benefits-action" id="action-confirmar">
@@ -71,18 +70,32 @@
                     <strong>Confirmar consulta</strong>
                     <small>Hoje às 14:30</small>
                   </div>
-                  <button class="btn btn-brand" id="btn-confirmar" type="button">
-                    Ganhar Care Coins
-                  </button>
+                  <div class="home-benefits-action-buttons">
+                    <button class="btn btn-brand home-benefits-coin-btn" id="btn-confirmar" type="button">
+                      Ganhar Care Coins
+                    </button>
+                    <button class="btn home-calendar-action-btn" type="button" data-calendar-action
+                      data-calendar-title="Confirmar consulta" data-calendar-date="Hoje" data-calendar-time="14:30">
+                      <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>
+                      <span>Adicionar à agenda</span>
+                    </button>
+                  </div>
                 </div>
                 <div class="home-benefits-action" id="action-agendar">
                   <div>
                     <strong>Agendar check-up</strong>
                     <small>Prevenção de saúde</small>
                   </div>
-                  <button class="btn btn-brand" id="btn-agendar" type="button">
-                    Ganhar Care Coins
-                  </button>
+                  <div class="home-benefits-action-buttons">
+                    <button class="btn btn-brand home-benefits-coin-btn" id="btn-agendar" type="button">
+                      Ganhar Care Coins
+                    </button>
+                    <button class="btn home-calendar-action-btn" type="button" data-calendar-action
+                      data-calendar-title="Agendar check-up" data-calendar-date="24/05/2026" data-calendar-time="09:00">
+                      <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>
+                      <span>Adicionar à agenda</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,6 +189,73 @@
   </div>
 
   <!-- Modais de feedback do dashboard -->
+  <div class="modal fade" id="modalAdicionarAgenda" tabindex="-1" aria-labelledby="modalAdicionarAgendaLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 home-calendar-modal-content">
+        <div class="modal-body p-4">
+          <div class="home-calendar-modal-header">
+            <div class="home-calendar-mascot-wrap">
+              <img src="assets/images/mascote/care-apontando.png" alt="Care apontando para a agenda"
+                class="home-calendar-mascot" />
+            </div>
+            <div>
+              <h5 id="modalAdicionarAgendaLabel" class="fw-bold mb-1">
+                Adicionar à agenda
+              </h5>
+              <p class="mb-0 small">
+                Vamos sincronizar este cuidado com o calendário do celular para lembrar você no momento certo.
+              </p>
+            </div>
+          </div>
+
+          <div class="home-calendar-preview" aria-live="polite">
+            <div class="home-calendar-phone" aria-hidden="true">
+              <span class="home-calendar-phone-speaker"></span>
+              <div class="home-calendar-phone-screen">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Care Plus</span>
+              </div>
+            </div>
+
+            <div class="home-calendar-event-card">
+              <span class="home-calendar-event-label">Próximo cuidado</span>
+              <strong id="calendarEventTitle">Confirmar consulta</strong>
+              <div class="home-calendar-event-details">
+                <span>
+                  <i class="fa-solid fa-calendar-day" aria-hidden="true"></i>
+                  <span id="calendarEventDate">Hoje</span>
+                </span>
+                <span>
+                  <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                  <span id="calendarEventTime">14:30</span>
+                </span>
+              </div>
+              <div class="home-calendar-reminder-chip">
+                <i class="fa-solid fa-bell" aria-hidden="true"></i>
+                Lembrete no celular
+              </div>
+            </div>
+          </div>
+
+          <p class="home-calendar-success d-none" id="calendarSuccessMessage" role="status">
+            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+            Tudo certo! Sua consulta já está sincronizada com a agenda do celular. ✨
+          </p>
+
+          <div class="home-calendar-modal-actions">
+            <button type="button" class="btn home-calendar-cancel-btn" id="btnCancelarAgenda" data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="button" class="btn btn-brand" id="btnConfirmarAgenda">
+              Confirmar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="modalConfirmarConsulta" tabindex="-1" aria-labelledby="modalConfirmarConsultaLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
