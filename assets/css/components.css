@@ -185,7 +185,6 @@
   color: var(--white-color);
 }
 
-.profile-menu-user a,
 .profile-menu-status span,
 .profile-menu-action small {
   color: var(--text-secondary-color);
@@ -195,6 +194,8 @@
 .profile-menu-user a {
   text-decoration: none;
   width: fit-content;
+  color: var(--text-link-color-bg-dark);
+  font-size: 0.82rem;
 }
 
 .profile-menu-user a:hover,
