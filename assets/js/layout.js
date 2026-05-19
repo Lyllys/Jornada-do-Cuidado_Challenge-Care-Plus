@@ -128,7 +128,7 @@ function loadLayout() {
                     </span>
                   </button>
 
-                  <a href="niveis.html?modal=medalhas" class="profile-menu-action" style="text-decoration:none;color:inherit; white-space:nowrap;">
+                  <a href="conquistas.html?modal=medalhas" class="profile-menu-action" style="text-decoration:none;color:inherit; white-space:nowrap;">
                     <span class="profile-menu-action-icon">
                       <i class="fa-solid fa-medal"></i>
                     </span>
@@ -190,8 +190,8 @@ function loadLayout() {
                     </a>
                   </li>
                   <li class="nav-item menu-lateral-item">
-                    <a class="nav-link px-3 ${currentPage === 'niveis.html' ? 'active' : ''}" href="niveis.html">
-                        <i class="fa-solid fa-medal"></i> Níveis
+                    <a class="nav-link px-3 ${currentPage === 'conquistas.html' ? 'active' : ''}" href="conquistas.html">
+                        <i class="fa-solid fa-medal"></i> Conquistas
                     </a>
                   </li>
                 </ul>
